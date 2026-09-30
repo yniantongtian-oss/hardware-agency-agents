@@ -3,7 +3,7 @@
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Skills](https://img.shields.io/badge/skills-63-blue)
+![Skills](https://img.shields.io/badge/skills-55-blue)
 ![Domains](https://img.shields.io/badge/domains-8-orange)
 ![Language](https://img.shields.io/badge/language-bilingual-purple)
 
@@ -68,7 +68,7 @@ Suggested starting points:
 
 ## 📦 Overview
 
-- 47 hardware role skills plus 16 hardware design review skills with English and Chinese versions
+- 47 hardware role skills plus 8 hardware design review skills, each in English and Chinese (110 documents)
 - 8 engineering domains
 - Coverage across PCB implementation, embedded hardware, power, EMC/compliance, validation, SoC/FPGA platforms, and communication interfaces
 - Suitable for schematic review, PCB constraint analysis, hardware design review, debug work, validation planning, and production-readiness discussions
@@ -214,7 +214,7 @@ Notes:
 | [Communications Hardware Engineer](./hardware-agency-agents-en/Communication%20and%20Interfaces/Communications%20Hardware%20Engineer.md) | Communication boards, high-speed interfaces, link debug, transmission lines, and EMC-aware design |
 
 
-### Hardware Design Review and Validation (16)
+### Hardware Design Review and Validation (16 bilingual documents)
 
 #### English Review Skills (8)
 

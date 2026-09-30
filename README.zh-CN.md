@@ -3,7 +3,7 @@
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Skills](https://img.shields.io/badge/skills-63-blue)
+![Skills](https://img.shields.io/badge/skills-55-blue)
 ![Domains](https://img.shields.io/badge/domains-8-orange)
 ![Language](https://img.shields.io/badge/language-bilingual-purple)
 
@@ -69,7 +69,7 @@
 
 ## 📦 仓库概览
 
-- 47 个硬件角色 skill，加 16 个硬件设计评审 skill，对应中英文两套文件
+- 47 个硬件角色 skill，加 8 个硬件设计评审 skill，各有中英文版本，共 110 份文档
 - 8 个专业方向
 - 覆盖 PCB、嵌入式硬件、电源、EMC/安规、验证测试、SoC/FPGA、通信接口等核心领域
 - 适合用于方案评审、原理图检查、PCB 约束梳理、硬件设计评审、调试定位、验证策划、量产导入与跨团队协作
@@ -215,7 +215,7 @@ hardware-agency-agents/
 | [通信硬件工程师](./hardware-agency-agents-cn/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%96%B9%E5%90%91/%E9%80%9A%E4%BF%A1%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 通信板卡、高速接口、链路调试、传输线与 EMC 协同设计 |
 
 
-### 硬件设计评审与验证（16）
+### 硬件设计评审与验证（16 份双语文档）
 
 #### 中文评审 Skill（8）
 
