@@ -1,7 +1,5 @@
 # hardware-agency-agents
 
-[English](./README.md) | [简体中文](./README.zh-CN.md)
-
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Skills](https://img.shields.io/badge/skills-55-blue)
 ![Domains](https://img.shields.io/badge/domains-8-orange)
@@ -13,7 +11,7 @@ If you are tired of suggestions like "just make the ground trace wider" or "plac
 
 `hardware-agency-agents` is an open-source library of hardware engineering skills organized by real engineering roles. Each skill document focuses on a specific role boundary, technical constraints, workflows, communication style, and expected deliverables, so hardware tasks can be approached with more rigorous engineering judgment instead of generic assistant-style advice.
 
-This repository is inspired by the organizational clarity of strong skill libraries, and it now maintains synchronized Chinese and English skill documents around the actual files in this repository, with a focus on board-level constraints and production-oriented design thinking.
+This repository is inspired by the organizational clarity of strong skill libraries, and it maintains English engineering roles alongside historical translation resources, with a focus on board-level constraints and production-oriented design thinking.
 
 ## 📚 Table of Contents
 
@@ -31,19 +29,15 @@ This repository is inspired by the organizational clarity of strong skill librar
 
 ## ⚡ Quick Start
 
-1. Install the skills for your agent:
+1. Clone the repository and inspect the available engineering roles:
 
-   Codex:
-
-   ```zsh
-   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- codex
+   ```bash
+   git clone https://github.com/yniantongtian-oss/hardware-agency-agents.git
+   cd hardware-agency-agents
    ```
 
-   Claude Code:
-
-   ```zsh
-   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- claude-code
-   ```
+   Select the relevant English-language role file from the directory index.
+   For a client-specific installer, inspect `install.sh` before running it.
 
 2. Pick the closest skill for your task from the index below.
 3. Read that skill as the primary engineering role.
@@ -102,15 +96,7 @@ hardware-agency-agents/
 │   ├── Power and Power Electronics/
 │   ├── Chip Platforms and Low-Level Board Co-Design/
 │   └── Communication and Interfaces/
-├── hardware-agency-agents-cn/
-│   ├── PCB 与板级实现方向/
-│   ├── 可靠性 EMC 安规方向/
-│   ├── 嵌入式硬件方向/
-│   ├── 数字 : 模拟 : 混合信号方向/
-│   ├── 测试与验证方向/
-│   ├── 电源与功率电子方向/
-│   ├── 芯片平台与底层板级协同方向/
-│   └── 通信与接口方向/
+├── hardware-agency-agents-cn/   # Historical translation assets
 └── hardware-design-review-validation/
     ├── en/
     └── cn/
@@ -229,18 +215,9 @@ Notes:
 | [Chip Platform and Board Co-Design Review Engineer](./hardware-design-review-validation/en/Chip%20Platform%20and%20Board%20Co-Design%20Review%20Engineer.md) | Review for SoC, FPGA, DDR, PMIC, boot chains, and reference-design adaptation |
 | [Communications and Interface Design Review Engineer](./hardware-design-review-validation/en/Communications%20and%20Interface%20Design%20Review%20Engineer.md) | Review for Ethernet, USB, CAN, RS485, LVDS, connectors, cables, and interface protection |
 
-#### Chinese Review Skills (8)
+#### Historical review translations
 
-| Skill | Focus |
-| --- | --- |
-| [PCB与板级实现评审工程师](./hardware-design-review-validation/cn/PCB%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向原理图、PCB、叠层、阻抗、制造资料和测试点的板级实现评审 |
-| [可靠性EMC安规评审工程师](./hardware-design-review-validation/cn/%E5%8F%AF%E9%9D%A0%E6%80%A7EMC%E5%AE%89%E8%A7%84%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向降额、温升、ESD、浪涌、EMC、安规距离和认证资料的风险评审 |
-| [嵌入式硬件评审工程师](./hardware-design-review-validation/cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向 MCU/MPU 最小系统、复位时钟、启动配置、接口和调试入口的评审 |
-| [数字模拟混合信号评审工程师](./hardware-design-review-validation/cn/%E6%95%B0%E5%AD%97%E6%A8%A1%E6%8B%9F%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向高速数字、模拟链路、ADC/DAC、参考源、噪声和串扰的评审 |
-| [测试与验证评审工程师](./hardware-design-review-validation/cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向 EVT、DVT、PVT、测试覆盖、样本量、数据记录和问题闭环的评审 |
-| [电源与功率电子评审工程师](./hardware-design-review-validation/cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向电源树、功率级、环路、纹波、瞬态、保护、热和 EMI 的评审 |
-| [芯片平台与板级协同评审工程师](./hardware-design-review-validation/cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向 SoC、FPGA、DDR、PMIC、启动链路和参考设计落地的评审 |
-| [通信与接口评审工程师](./hardware-design-review-validation/cn/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | Chinese-language hardware design review skill: 面向以太网、USB、CAN、RS485、LVDS、连接器、线缆和接口保护的评审 |
+The separate translated review collection is retained for provenance and compatibility. The English role library above is the primary documentation entry point.
 
 ## 🎯 How To Choose A Skill
 
