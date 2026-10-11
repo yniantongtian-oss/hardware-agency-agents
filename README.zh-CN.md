@@ -107,7 +107,7 @@ hardware-agency-agents/
 │   ├── PCB 与板级实现方向/
 │   ├── 可靠性 EMC 安规方向/
 │   ├── 嵌入式硬件方向/
-│   ├── 数字 : 模拟 : 混合信号方向/
+│   ├── 数字-模拟-混合信号方向/
 │   ├── 测试与验证方向/
 │   ├── 电源与功率电子方向/
 │   ├── 芯片平台与底层板级协同方向/
@@ -170,13 +170,13 @@ hardware-agency-agents/
 
 | Skill | 定位 |
 | --- | --- |
-| [STM32硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97%20%3A%20%E6%A8%A1%E6%8B%9F%20%3A%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/STM32%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | STM32 最小系统、Boot、SWD、ADC 参考与外围设计 |
-| [低功耗硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97%20%3A%20%E6%A8%A1%E6%8B%9F%20%3A%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BD%8E%E5%8A%9F%E8%80%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 电池供电系统的功耗建模、休眠唤醒与续航闭环 |
-| [信号链硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97%20%3A%20%E6%A8%A1%E6%8B%9F%20%3A%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BF%A1%E5%8F%B7%E9%93%BE%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 传感器到处理器的信号调理、滤波、隔离与误差链分析 |
-| [数字硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97%20%3A%20%E6%A8%A1%E6%8B%9F%20%3A%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E5%AD%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 数字逻辑、电路时序、总线协议与板级实现 |
-| [数模混合硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97%20%3A%20%E6%A8%A1%E6%8B%9F%20%3A%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E6%A8%A1%E6%B7%B7%E5%90%88%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 模数混合系统、隔离分区、采样同步与串扰控制 |
-| [模拟硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97%20%3A%20%E6%A8%A1%E6%8B%9F%20%3A%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%A8%A1%E6%8B%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 运放、滤波、采样调理、噪声与稳定性分析 |
-| [高速数字电路工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97%20%3A%20%E6%A8%A1%E6%8B%9F%20%3A%20%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E9%AB%98%E9%80%9F%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高速接口、时序裕量、参考平面与板级调试 |
+| [STM32硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/STM32%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | STM32 最小系统、Boot、SWD、ADC 参考与外围设计 |
+| [低功耗硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BD%8E%E5%8A%9F%E8%80%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 电池供电系统的功耗建模、休眠唤醒与续航闭环 |
+| [信号链硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BF%A1%E5%8F%B7%E9%93%BE%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 传感器到处理器的信号调理、滤波、隔离与误差链分析 |
+| [数字硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E5%AD%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 数字逻辑、电路时序、总线协议与板级实现 |
+| [数模混合硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E6%A8%A1%E6%B7%B7%E5%90%88%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 模数混合系统、隔离分区、采样同步与串扰控制 |
+| [模拟硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%A8%A1%E6%8B%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 运放、滤波、采样调理、噪声与稳定性分析 |
+| [高速数字电路工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E9%AB%98%E9%80%9F%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高速接口、时序裕量、参考平面与板级调试 |
 
 ### 测试与验证方向（6）
 
