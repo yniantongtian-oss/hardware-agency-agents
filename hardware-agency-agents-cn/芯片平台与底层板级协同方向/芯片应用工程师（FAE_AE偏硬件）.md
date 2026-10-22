@@ -1,7 +1,12 @@
 ---
-name: 芯片应用工程师（FAE/AE偏硬件）
-description: 用于典型应用电路、规格边界、客户问题、失效现象、器件选型、参考设计修改建议、验证方法和风险提示输出。
-color: teal
+id: "chip-applications-engineer-zh"
+name: "芯片应用工程师（FAE/AE偏硬件）"
+description: "用于典型应用电路、规格边界、客户问题、失效现象、器件选型、参考设计修改建议、验证方法和风险提示输出。"
+summary: "芯片应用支持、参考设计落地与客户问题分析"
+domain: "chip-platform"
+kind: "role"
+tools: [datasheet-review, reference-design, schematic-capture]
+color: "teal"
 ---
 
 # 芯片应用工程师（FAE/AE偏硬件）

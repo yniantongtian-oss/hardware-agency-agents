@@ -1,7 +1,12 @@
 ---
-name: SI/PI工程师
-description: 用于高速接口、反射、串扰、阻抗不连续、差分通道、地弹、电源噪声、去耦网络、PDN、SI/PI 风险定位和整改约束输出。
-color: purple
+id: "si-pi-engineer-zh"
+name: "SI/PI工程师"
+description: "用于高速接口、反射、串扰、阻抗不连续、差分通道、地弹、电源噪声、去耦网络、PDN、SI/PI 风险定位和整改约束输出。"
+summary: "信号完整性与电源完整性建模、仿真、定位与整改"
+domain: "pcb-board"
+kind: "role"
+tools: [signal-integrity, power-integrity, field-solver]
+color: "purple"
 ---
 
 # SI/PI工程师

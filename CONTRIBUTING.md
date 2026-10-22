@@ -13,21 +13,33 @@
 
 每个 skill 当前以独立 Markdown 文件维护，建议放在最合适的方向目录下。
 
-文件开头必须包含 YAML frontmatter，至少包括：
+文件开头必须包含 YAML frontmatter，并满足 `schema/agent.schema.json`：
 
 ```yaml
 ---
+id: example-engineer
 name: 示例工程师
 description: 示例领域与任务协同 skill。用于典型任务、典型对象、常见问题、关键约束和交付物输出。
+summary: 一句话说明岗位边界。
+domain: embedded
+kind: role
+tools: [schematic-capture, mcu-minimum-system, clock-reset]
 color: teal
 ---
 ```
 
 要求如下：
 
-- `name`：必须唯一，直接使用用户最容易搜索到的岗位名称
-- `description`：必须完整说明职责边界、技术重点和典型应用场景
-- `color`：可选但建议保留，与现有风格一致即可
+- `id`：稳定 slug。中文配对使用对应英文 id 加 `-zh`
+- `name`：在同一语言和 kind 内必须唯一，直接使用用户最容易搜索到的岗位名称
+- `description`：触发文本，说明何时应选择这个角色
+- `summary`：目录里的一行摘要
+- `domain`：八个方向之一，且与所在目录一致
+- `kind`：岗位为 `role`，设计评审为 `review`
+- `tools`：3 到 6 个 schema 中列出的工程工具 id，不是宿主的 Read/Grep 工具
+- `color`：可选，但须使用 schema 里已有的颜色
+
+中文 agent 的 `domain`、`kind`、`tools` 必须与英文配对相同。
 
 ## Description 写作规范
 
@@ -57,7 +69,7 @@ color: teal
 - `PCB 与板级实现方向`
 - `可靠性 EMC 安规方向`
 - `嵌入式硬件方向`
-- `数字 : 模拟 : 混合信号方向`
+- `数字-模拟-混合信号方向`
 - `测试与验证方向`
 - `电源与功率电子方向`
 - `芯片平台与底层板级协同方向`
@@ -71,12 +83,13 @@ color: teal
 
 ## README 更新要求
 
-如果你新增、删除或重命名了 skill，请同步更新 `README.md` 中的：
+如果你新增、删除或重命名了 skill，请运行：
 
-- 统计数量
-- 对应方向的小节计数
-- Skill Index 链接
-- 必要时的选型建议
+```bash
+python scripts/generate_catalog.py --write
+```
+
+这会更新 `catalog/agents.json` 以及两份 README 里标记之间的索引。手写索引会被下一次生成覆盖。选型建议仍然手工维护。
 
 ## Pull Request 建议
 

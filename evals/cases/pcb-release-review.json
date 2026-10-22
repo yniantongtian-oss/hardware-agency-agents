@@ -1,0 +1,26 @@
+{
+  "id": "pcb-release-review",
+  "language": "en",
+  "domain": "pcb-board",
+  "task": "Run a design review of the Gerber package, stackup, impedance coupon, and test points before this PCB is released to fabrication.",
+  "primary_agent": "PCB and Board-Level Design Review Engineer",
+  "supporting_agents": ["DFM Engineer", "PCB Layout Engineer"],
+  "checklist": [
+    {
+      "item": "Tie each finding to a Gerber layer or schematic sheet",
+      "mentions": ["gerber", "finding"]
+    },
+    {
+      "item": "Check stackup and impedance notes against the fab capability",
+      "mentions": ["stackup", "impedance"]
+    },
+    {
+      "item": "Confirm test points cover the rails that production must probe",
+      "mentions": ["test point", "rail"]
+    },
+    {
+      "item": "Mark blockers that stop the fabrication release",
+      "mentions": ["blocker", "fabrication"]
+    }
+  ]
+}

@@ -1,7 +1,12 @@
 ---
-name: BMS硬件工程师
-description: 用于电芯采样、均衡、MOS 保护、隔离通信、高压检测、温度采样、充放电异常、原理图评审和验证建议输出。
-color: green
+id: "bms-hardware-engineer-zh"
+name: "BMS硬件工程师"
+description: "用于电芯采样、均衡、MOS 保护、隔离通信、高压检测、温度采样、充放电异常、原理图评审和验证建议输出。"
+summary: "电芯采样、均衡、保护、高压安全与隔离通信"
+domain: "power"
+kind: "role"
+tools: [bms-sensing, cell-balancing, isolation]
+color: "green"
 ---
 
 # BMS硬件工程师

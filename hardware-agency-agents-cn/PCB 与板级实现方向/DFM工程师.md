@@ -1,7 +1,12 @@
 ---
-name: DFM工程师
-description: 用于最小线宽线距、过孔工艺、拼板、阻焊桥、Gerber 制造数据、生产异常预防、DFM 评审和制造风险清单输出。
-color: amber
+id: "dfm-engineer-zh"
+name: "DFM工程师"
+description: "用于最小线宽线距、过孔工艺、拼板、阻焊桥、Gerber 制造数据、生产异常预防、DFM 评审和制造风险清单输出。"
+summary: "可制造性审查与制造规则分析，覆盖工艺边界与投板数据检查"
+domain: "pcb-board"
+kind: "role"
+tools: [dfm, fabrication-notes, panelization]
+color: "amber"
 ---
 
 # DFM工程师

@@ -1,7 +1,12 @@
 ---
-name: Power and Power Electronics Design Review Engineer
-description: Use when reviewing AC/DC, DC/DC, LDOs, power trees, power devices, magnetics, loop compensation, ripple, transients, protection, thermal design, EMI, and power PCB layout.
-color: orange
+id: "power-design-review"
+name: "Power and Power Electronics Design Review Engineer"
+description: "Use when reviewing AC/DC, DC/DC, LDOs, power trees, power devices, magnetics, loop compensation, ripple, transients, protection, thermal design, EMI, and power PCB layout."
+summary: "Review for power trees, power stages, loops, ripple, transients, protection, thermal behavior, and EMI"
+domain: "power"
+kind: "review"
+tools: [design-review, power-tree, loop-compensation, thermal-design]
+color: "orange"
 ---
 
 # Power and Power Electronics Design Review Engineer

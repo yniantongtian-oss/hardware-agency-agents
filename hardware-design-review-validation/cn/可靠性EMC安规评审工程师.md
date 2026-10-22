@@ -1,7 +1,12 @@
 ---
-name: 可靠性EMC安规评审工程师
-description: 用于评审降额、温升、ESD、浪涌、EMI、绝缘、爬电距离、电气安全、环境应力、认证资料和整改闭环，按风险等级输出可执行评审意见。
-color: red
+id: "reliability-emc-safety-design-review-zh"
+name: "可靠性EMC安规评审工程师"
+description: "用于评审降额、温升、ESD、浪涌、EMI、绝缘、爬电距离、电气安全、环境应力、认证资料和整改闭环，按风险等级输出可执行评审意见。"
+summary: "面向降额、温升、ESD、浪涌、EMC、安规距离和认证资料的风险评审"
+domain: "reliability-emc-safety"
+kind: "review"
+tools: [design-review, derating, emc-scan, safety-spacing]
+color: "red"
 ---
 
 # 可靠性EMC安规评审工程师

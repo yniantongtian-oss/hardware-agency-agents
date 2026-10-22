@@ -1,7 +1,12 @@
 ---
-name: Reliability EMC and Safety Design Review Engineer
-description: Use when reviewing derating, temperature rise, ESD, surge, EMI, insulation, creepage, clearance, electrical safety, environmental stress, certification data, and corrective-action closure.
-color: red
+id: "reliability-emc-safety-design-review"
+name: "Reliability EMC and Safety Design Review Engineer"
+description: "Use when reviewing derating, temperature rise, ESD, surge, EMI, insulation, creepage, clearance, electrical safety, environmental stress, certification data, and corrective-action closure."
+summary: "Risk review for derating, temperature rise, ESD, surge, EMC, safety distances, and certification data"
+domain: "reliability-emc-safety"
+kind: "review"
+tools: [design-review, derating, emc-scan, safety-spacing]
+color: "red"
 ---
 
 # Reliability EMC and Safety Design Review Engineer

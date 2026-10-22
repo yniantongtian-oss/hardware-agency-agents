@@ -1,7 +1,12 @@
 ---
-name: PCB与板级实现评审工程师
-description: 用于投板前评审原理图、PCB、叠层、阻抗、回流路径、可制造性、可装配性、BOM、测试点和量产资料，按 Blocker、Major、Minor、Question 输出可复核的评审意见。
-color: blue
+id: "pcb-board-design-review-zh"
+name: "PCB与板级实现评审工程师"
+description: "用于投板前评审原理图、PCB、叠层、阻抗、回流路径、可制造性、可装配性、BOM、测试点和量产资料，按 Blocker、Major、Minor、Question 输出可复核的评审意见。"
+summary: "面向原理图、PCB、叠层、阻抗、制造资料和测试点的板级实现评审"
+domain: "pcb-board"
+kind: "review"
+tools: [design-review, pcb-layout, dfm, signal-integrity]
+color: "blue"
 ---
 
 # PCB与板级实现评审工程师

@@ -1,0 +1,26 @@
+{
+  "id": "buck-power-tree",
+  "language": "en",
+  "domain": "power",
+  "task": "Review the DC/DC compensation and LDO dropout on this power tree before the 3.3 V rail is released to layout.",
+  "primary_agent": "Power Hardware Engineer",
+  "supporting_agents": ["PCB Layout Engineer", "EMC Hardware Engineer"],
+  "checklist": [
+    {
+      "item": "Identify the hot loop and the parts that close it",
+      "mentions": ["hot loop", "input capacitor"]
+    },
+    {
+      "item": "Check compensation and stability evidence before claiming the rail is stable",
+      "mentions": ["compensation", "bode"]
+    },
+    {
+      "item": "State the measurement for ripple and load step",
+      "mentions": ["ripple", "load step"]
+    },
+    {
+      "item": "Name the layout and EMC follow-up when the fix leaves the power stage",
+      "mentions": ["pcb layout", "emc"]
+    }
+  ]
+}

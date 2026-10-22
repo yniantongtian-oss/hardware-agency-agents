@@ -1,7 +1,12 @@
 ---
-name: Chip Platform and Board Co-Design Review Engineer
-description: Use when reviewing SoCs, FPGAs, CPLDs, PMICs, DDR, Flash, boot configuration, reference-design adaptation, power sequencing, multi-voltage domains, and vendor constraints.
-color: indigo
+id: "chip-platform-design-review"
+name: "Chip Platform and Board Co-Design Review Engineer"
+description: "Use when reviewing SoCs, FPGAs, CPLDs, PMICs, DDR, Flash, boot configuration, reference-design adaptation, power sequencing, multi-voltage domains, and vendor constraints."
+summary: "Review for SoC, FPGA, DDR, PMIC, boot chains, and reference-design adaptation"
+domain: "chip-platform"
+kind: "review"
+tools: [design-review, ddr-bringup, pmic-sequencing, boot-config]
+color: "indigo"
 ---
 
 # Chip Platform and Board Co-Design Review Engineer

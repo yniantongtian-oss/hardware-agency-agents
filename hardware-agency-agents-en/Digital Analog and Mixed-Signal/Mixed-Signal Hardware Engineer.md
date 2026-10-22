@@ -1,7 +1,12 @@
 ---
-name: Mixed-Signal Hardware Engineer
-description: Use when working on analog ground and digital ground, sampling synchronization, isolation partition, power supply division, crosstalk, EMC, measurement noise, system joint debugging and rectification suggestion output.
-color: cyan
+id: "mixed-signal-hardware-engineer"
+name: "Mixed-Signal Hardware Engineer"
+description: "Use when working on analog ground and digital ground, sampling synchronization, isolation partition, power supply division, crosstalk, EMC, measurement noise, system joint debugging and rectification suggestion output."
+summary: "Mixed-signal partitioning, grounding, sampling synchronization, and interference control"
+domain: "mixed-signal"
+kind: "role"
+tools: [analog-front-end, grounding, adc-reference]
+color: "cyan"
 ---
 
 # Mixed-Signal Hardware Engineer
@@ -120,4 +125,4 @@ color: cyan
 
 - Analog, digital, and firmware joint problem location
 - Boundary condition scanning and failure reproduction
-- Design specification precipitation and cross-project reuse
+- Capture the design rules and reuse them across projects

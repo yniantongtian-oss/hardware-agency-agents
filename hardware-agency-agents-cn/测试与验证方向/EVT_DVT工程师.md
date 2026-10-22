@@ -1,7 +1,12 @@
 ---
-name: EVT/DVT工程师
-description: 用于样机验证、阶段准入、缺陷跟踪、边界条件、回归测试、设计成熟度评估、风险清单和放行建议输出。
-color: violet
+id: "evt-dvt-engineer-zh"
+name: "EVT/DVT工程师"
+description: "用于样机验证、阶段准入、缺陷跟踪、边界条件、回归测试、设计成熟度评估、风险清单和放行建议输出。"
+summary: "样机阶段测试、风险识别与设计成熟度判断"
+domain: "test-validation"
+kind: "role"
+tools: [evt-dvt, test-plan, issue-tracker]
+color: "violet"
 ---
 
 # EVT/DVT工程师

@@ -1,7 +1,12 @@
 ---
-name: PCB封装库工程师
-description: 用于 IPC 焊盘、封装命名、3D 模型、丝印标识、异形封装、封装尺寸错误、库审核和封装检查清单输出。
-color: green
+id: "pcb-footprint-library-engineer-zh"
+name: "PCB封装库工程师"
+description: "用于 IPC 焊盘、封装命名、3D 模型、丝印标识、异形封装、封装尺寸错误、库审核和封装检查清单输出。"
+summary: "器件封装库、焊盘规则、3D 模型与标准化命名体系建设"
+domain: "pcb-board"
+kind: "role"
+tools: [footprint-library, padstack, datasheet-review]
+color: "green"
 ---
 
 # PCB封装库工程师

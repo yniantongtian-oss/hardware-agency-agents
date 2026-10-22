@@ -1,0 +1,26 @@
+{
+  "id": "stm32-swd",
+  "language": "en",
+  "domain": "mixed-signal",
+  "task": "This STM32 board never enumerates on SWD. Check the boot pins and NRST before blaming firmware.",
+  "primary_agent": "STM32 Hardware Engineer",
+  "supporting_agents": ["Board-Level Debug Engineer"],
+  "checklist": [
+    {
+      "item": "Confirm boot pins and reset against the reference manual",
+      "mentions": ["boot", "nrst"]
+    },
+    {
+      "item": "Check SWDIO and SWCLK wiring and series resistors",
+      "mentions": ["swdio", "swclk"]
+    },
+    {
+      "item": "Verify the debug header supply and target voltage",
+      "mentions": ["vtarget", "debug header"]
+    },
+    {
+      "item": "Separate a hardware connect failure from a firmware option-byte issue",
+      "mentions": ["option byte", "connect"]
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "stm32-swd-zh",
+  "language": "zh",
+  "domain": "mixed-signal",
+  "task": "这块 STM32 控制板 SWD 无法连接。先核对 Boot 引脚、NRST 和调试座，再判断是不是固件问题。",
+  "primary_agent": "STM32硬件工程师",
+  "supporting_agents": ["板级调试工程师"],
+  "checklist": [
+    {
+      "item": "核对 Boot 与复位脚",
+      "mentions": ["boot", "nrst"]
+    },
+    {
+      "item": "检查 SWD 接线",
+      "mentions": ["swdio", "swclk"]
+    },
+    {
+      "item": "确认调试座供电",
+      "mentions": ["调试座", "电平"]
+    },
+    {
+      "item": "区分硬件连接失败和选项字节问题",
+      "mentions": ["选项字节", "连接"]
+    }
+  ]
+}

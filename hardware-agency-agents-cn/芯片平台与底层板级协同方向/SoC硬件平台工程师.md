@@ -1,7 +1,12 @@
 ---
-name: SoC硬件平台工程师
-description: 用于 DDR、PMIC、Boot 配置、高速接口、时钟树、电源时序、启动异常、平台评审和调试路径输出。
-color: slate
+id: "soc-hardware-platform-engineer-zh"
+name: "SoC硬件平台工程师"
+description: "用于 DDR、PMIC、Boot 配置、高速接口、时钟树、电源时序、启动异常、平台评审和调试路径输出。"
+summary: "SoC/MPU 平台、DDR、电源时序、PMIC 与启动配置"
+domain: "chip-platform"
+kind: "role"
+tools: [ddr-bringup, pmic-sequencing, boot-config]
+color: "slate"
 ---
 
 # SoC硬件平台工程师

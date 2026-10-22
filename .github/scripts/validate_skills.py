@@ -1,40 +1,33 @@
 from __future__ import annotations
 
-from pathlib import Path
-import re
 import sys
+from pathlib import Path
 from urllib.parse import unquote
 
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
+
+from scripts.hw_agents import (  # noqa: E402
+    ROLE_DIR_DOMAIN,
+    AgentError,
+    integrity_errors,
+    iter_agent_files,
+    load_agents,
+)
+
 README_EN = ROOT / "README.md"
 README_ZH = ROOT / "README.zh-CN.md"
-
 CN_SKILL_ROOT = ROOT / "hardware-agency-agents-cn"
 EN_SKILL_ROOT = ROOT / "hardware-agency-agents-en"
-REVIEW_ROOT = ROOT / "hardware-design-review-validation"
 
-CN_SKILL_DIR_NAMES = {
-    "PCB 与板级实现方向",
-    "可靠性 EMC 安规方向",
-    "嵌入式硬件方向",
-    "数字-模拟-混合信号方向",
-    "测试与验证方向",
-    "电源与功率电子方向",
-    "芯片平台与底层板级协同方向",
-    "通信与接口方向",
-}
 
-EN_SKILL_DIR_NAMES = {
-    "PCB and Board-Level Implementation",
-    "Reliability EMC and Safety",
-    "Embedded Hardware",
-    "Digital Analog and Mixed-Signal",
-    "Testing and Validation",
-    "Power and Power Electronics",
-    "Chip Platforms and Low-Level Board Co-Design",
-    "Communication and Interfaces",
-}
+def _is_zh_dir(name: str) -> bool:
+    return any("\u4e00" <= char <= "\u9fff" for char in name)
+
+
+CN_SKILL_DIR_NAMES = {name for name in ROLE_DIR_DOMAIN if _is_zh_dir(name)}
+EN_SKILL_DIR_NAMES = {name for name in ROLE_DIR_DOMAIN if name not in CN_SKILL_DIR_NAMES}
 
 
 def fail(message: str) -> None:
@@ -42,33 +35,11 @@ def fail(message: str) -> None:
     raise SystemExit(1)
 
 
-def parse_frontmatter(text: str, path: Path) -> dict[str, str]:
-    if not text.startswith("---\n"):
-        fail(f"{path.relative_to(ROOT)} is missing YAML frontmatter")
-
-    parts = text.split("---\n", 2)
-    if len(parts) < 3:
-        fail(f"{path.relative_to(ROOT)} has malformed frontmatter")
-
-    raw = parts[1]
-    data: dict[str, str] = {}
-    for line in raw.splitlines():
-        if not line.strip():
-            continue
-        if ":" not in line:
-            fail(f"{path.relative_to(ROOT)} has invalid frontmatter line: {line}")
-        key, value = line.split(":", 1)
-        data[key.strip()] = value.strip()
-    return data
-
-
 def _collect_skills(base: Path, allowed_dirs: set[str]) -> list[Path]:
     if not base.is_dir():
         fail(f"Missing skill tree directory: {base.relative_to(ROOT)}")
     skill_files = sorted(
-        path
-        for path in base.glob("*/*.md")
-        if path.parent.name in allowed_dirs
+        path for path in base.glob("*/*.md") if path.parent.name in allowed_dirs
     )
     if not skill_files:
         fail(f"No skill markdown files found under {base.relative_to(ROOT)}")
@@ -76,29 +47,10 @@ def _collect_skills(base: Path, allowed_dirs: set[str]) -> list[Path]:
 
 
 def _collect_review_skills() -> list[Path]:
-    if not REVIEW_ROOT.is_dir():
+    review_root = ROOT / "hardware-design-review-validation"
+    if not review_root.is_dir():
         return []
-    return sorted(REVIEW_ROOT.glob("*/*.md"))
-
-
-def validate_skill_files(skill_files: list[Path], *, unique_names: bool) -> None:
-    seen_names: dict[str, Path] = {}
-    for path in skill_files:
-        text = path.read_text(encoding="utf-8")
-        meta = parse_frontmatter(text, path)
-        for field in ("name", "description"):
-            if not meta.get(field):
-                fail(f"{path.relative_to(ROOT)} is missing required field: {field}")
-        if not unique_names:
-            continue
-        name = meta["name"]
-        if name in seen_names:
-            other = seen_names[name].relative_to(ROOT)
-            fail(
-                f"Duplicate skill name '{name}' found in "
-                f"{other} and {path.relative_to(ROOT)}"
-            )
-        seen_names[name] = path
+    return sorted(review_root.glob("*/*.md"))
 
 
 def validate_readme(readme: Path, skill_files: list[Path]) -> None:
@@ -106,7 +58,7 @@ def validate_readme(readme: Path, skill_files: list[Path]) -> None:
         fail(f"{readme.name} is missing")
 
     text = readme.read_text(encoding="utf-8")
-    links = re.findall(r"\]\((\.\/[^)]+\.md)\)", text)
+    links = re_links(text)
     expected = {path.relative_to(ROOT).as_posix() for path in skill_files}
     found_local_skills = set()
 
@@ -131,16 +83,29 @@ def validate_readme(readme: Path, skill_files: list[Path]) -> None:
         )
 
 
+def re_links(text: str) -> list[str]:
+    import re
+
+    return re.findall(r"\]\((\.\/[^)]+\.md)\)", text)
+
+
 def main() -> None:
     cn_skills = _collect_skills(CN_SKILL_ROOT, CN_SKILL_DIR_NAMES)
     en_skills = _collect_skills(EN_SKILL_ROOT, EN_SKILL_DIR_NAMES)
     review_skills = _collect_review_skills()
 
-    validate_skill_files(cn_skills, unique_names=True)
-    validate_skill_files(en_skills, unique_names=True)
-    if review_skills:
-        # CN/EN review names intentionally differ by language; uniqueness within tree.
-        validate_skill_files(review_skills, unique_names=True)
+    discovered = {path.resolve() for path in iter_agent_files(ROOT)}
+    expected = {path.resolve() for path in [*cn_skills, *en_skills, *review_skills]}
+    if discovered != expected:
+        fail("Agent discovery does not match the English, Chinese, and review trees")
+
+    try:
+        agents = load_agents(ROOT)
+    except AgentError as exc:
+        fail(str(exc))
+    problems = integrity_errors(agents)
+    if problems:
+        fail("Agent frontmatter failed schema validation:\n" + "\n".join(problems))
 
     validate_readme(README_EN, en_skills + [p for p in review_skills if p.parent.name == "en"])
     validate_readme(README_ZH, cn_skills + [p for p in review_skills if p.parent.name == "cn"])

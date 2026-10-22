@@ -1,7 +1,12 @@
 ---
-name: DFA工程师
-description: 用于器件间距、焊接方向、钢网开口、可返修性、SMT/DIP 装配约束、连锡虚焊风险、装配评审和 DFA 整改建议输出。
-color: yellow
+id: "dfa-engineer-zh"
+name: "DFA工程师"
+description: "用于器件间距、焊接方向、钢网开口、可返修性、SMT/DIP 装配约束、连锡虚焊风险、装配评审和 DFA 整改建议输出。"
+summary: "可装配性设计优化，关注焊接风险、器件间距、装配方向与返修性"
+domain: "pcb-board"
+kind: "role"
+tools: [dfa, assembly-process, footprint-check]
+color: "yellow"
 ---
 
 # DFA工程师

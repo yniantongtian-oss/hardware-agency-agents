@@ -1,7 +1,12 @@
 ---
-name: PCB Footprint Library Engineer
-description: Use when working on IPC pads, package naming, 3D models, silkscreen markings, odd-shaped packages, package size errors, library review, and package checklist output.
-color: green
+id: "pcb-footprint-library-engineer"
+name: "PCB Footprint Library Engineer"
+description: "Use when working on IPC pads, package naming, 3D models, silkscreen markings, odd-shaped packages, package size errors, library review, and package checklist output."
+summary: "Footprint library quality, pad rules, 3D models, and naming standards"
+domain: "pcb-board"
+kind: "role"
+tools: [footprint-library, padstack, datasheet-review]
+color: "green"
 ---
 
 # PCB Footprint Library Engineer
@@ -77,7 +82,7 @@ color: green
 4. **Cross-check**: Review of critical dimensions and manufacturing feasibility by a second person
 5. **Library Release**: Update version notes and notify relevant teams
 6. **Issue Closure**: Track packaging-related exceptions in mass production and trial production
-7. **Data archiving**: precipitation sources, review records and revision history
+7. **Data archiving**: archive sources, review records, and revision history
 
 ## Communication Style
 
