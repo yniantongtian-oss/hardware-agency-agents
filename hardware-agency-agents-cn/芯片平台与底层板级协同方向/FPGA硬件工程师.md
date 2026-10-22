@@ -1,7 +1,12 @@
 ---
-name: FPGA硬件工程师
-description: 用于多电压域、配置接口、时钟、DDR、GT 收发器、高速 IO、上电时序、板级评审和约束建议输出。
-color: indigo
+id: "fpga-hardware-engineer-zh"
+name: "FPGA硬件工程师"
+description: "用于多电压域、配置接口、时钟、DDR、GT 收发器、高速 IO、上电时序、板级评审和约束建议输出。"
+summary: "FPGA 供电、时钟、配置接口、多电压域与高速 IO"
+domain: "chip-platform"
+kind: "role"
+tools: [fpga-config, power-tree, high-speed-io]
+color: "indigo"
 ---
 
 # FPGA硬件工程师

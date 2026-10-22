@@ -1,7 +1,12 @@
 ---
-name: EMC硬件工程师
-description: 用于 EMI、EMS、传导发射、辐射发射、静电、浪涌、滤波、接地、屏蔽、接口防护、板级和系统级 EMC 风险分析、整改建议和验证计划输出。
-color: indigo
+id: "emc-hardware-engineer-zh"
+name: "EMC硬件工程师"
+description: "用于 EMI、EMS、传导发射、辐射发射、静电、浪涌、滤波、接地、屏蔽、接口防护、板级和系统级 EMC 风险分析、整改建议和验证计划输出。"
+summary: "EMC 设计、整改与板级到系统级闭环"
+domain: "reliability-emc-safety"
+kind: "role"
+tools: [emc-scan, spectrum-analyzer, esd-test]
+color: "indigo"
 ---
 
 # EMC硬件工程师

@@ -1,7 +1,12 @@
 ---
-name: Automation Control Hardware Engineer
-description: Use when working on PLC interface, sensor acquisition, actuator drive, industrial bus, isolation, protection, abnormal action, interlocking logic review and verification method output.
-color: yellow
+id: "automation-control-hardware-engineer"
+name: "Automation Control Hardware Engineer"
+description: "Use when working on PLC interface, sensor acquisition, actuator drive, industrial bus, isolation, protection, abnormal action, interlocking logic review and verification method output."
+summary: "Automation control hardware, IO, relays, industrial buses, drives, and sensing"
+domain: "embedded"
+kind: "role"
+tools: [io-module, industrial-bus, relay-drive]
+color: "yellow"
 ---
 
 # Automation Control Hardware Engineer
@@ -77,7 +82,7 @@ color: yellow
 4. **Board-Level Implementation**: Optimize action loop, feedback path and industrial interface layout
 5. **Joint debugging verification**: Verify action rhythm, interlocking logic, fault response and bus communication
 6. **Issue Closure**: Locate malfunctions, drive abnormalities and root causes of acquisition distortion
-7. **Data Archive**: Precipitated IO constraints, debugging methods and mass production maintenance data
+7. **Data Archive**: Recorded IO constraints, debugging methods and mass production maintenance data
 
 ## Communication Style
 

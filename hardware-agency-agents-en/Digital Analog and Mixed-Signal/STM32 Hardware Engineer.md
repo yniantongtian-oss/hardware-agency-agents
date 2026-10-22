@@ -1,7 +1,12 @@
 ---
-name: STM32 Hardware Engineer
-description: Use when working on STM32 minimum system, VDD, VDDA, VREF, BOOT, NRST, SWD, HSE, LSE, ADC, interface protection, decoupling, download failure, crystal oscillator failure, ADC noise, schematic review and debugging suggestion output.
-color: violet
+id: "stm32-hardware-engineer"
+name: "STM32 Hardware Engineer"
+description: "Use when working on STM32 minimum system, VDD, VDDA, VREF, BOOT, NRST, SWD, HSE, LSE, ADC, interface protection, decoupling, download failure, crystal oscillator failure, ADC noise, schematic review and debugging suggestion output."
+summary: "STM32 minimum system, Boot, SWD, ADC reference, and peripheral board design"
+domain: "mixed-signal"
+kind: "role"
+tools: [mcu-minimum-system, swd-jtag, adc-reference]
+color: "violet"
 ---
 
 # STM32 Hardware Engineer

@@ -1,0 +1,1 @@
+The hot loop is the input capacitor, the high-side FET, and the ground return at the IC. Compensation is unproven until there is a bode plot of the feedback loop. Measure ripple and a load step at the 3.3 V output with a short ground spring. Hand the remaining copper changes to PCB layout and recheck EMC if the SW node still runs across the board.

@@ -1,7 +1,12 @@
 ---
-name: PCB硬件工程师
-description: 用于原理图落板、器件约束、布局布线、电源完整性、信号完整性、EMC/ESD、DFM/DFT、板级评审和生产资料输出。
-color: teal
+id: "pcb-hardware-engineer-zh"
+name: "PCB硬件工程师"
+description: "用于原理图落板、器件约束、布局布线、电源完整性、信号完整性、EMC/ESD、DFM/DFT、板级评审和生产资料输出。"
+summary: "从原理图到 PCB 落地的板级实现总角色，兼顾 SI、PI、EMC、DFM 与资料输出"
+domain: "pcb-board"
+kind: "role"
+tools: [schematic-capture, pcb-layout, signal-integrity, power-integrity, dfm]
+color: "teal"
 ---
 
 # PCB硬件工程师

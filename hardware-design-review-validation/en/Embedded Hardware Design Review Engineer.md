@@ -1,7 +1,12 @@
 ---
-name: Embedded Hardware Design Review Engineer
-description: Use when reviewing MCU, MPU, minimum systems, reset, clocks, boot configuration, debug ports, peripheral interfaces, level compatibility, protection, board bring-up, and production-test access.
-color: green
+id: "embedded-hardware-design-review"
+name: "Embedded Hardware Design Review Engineer"
+description: "Use when reviewing MCU, MPU, minimum systems, reset, clocks, boot configuration, debug ports, peripheral interfaces, level compatibility, protection, board bring-up, and production-test access."
+summary: "Review for MCU/MPU minimum systems, reset and clock circuits, boot configuration, interfaces, and debug access"
+domain: "embedded"
+kind: "review"
+tools: [design-review, mcu-minimum-system, clock-reset, boot-config]
+color: "green"
 ---
 
 # Embedded Hardware Design Review Engineer

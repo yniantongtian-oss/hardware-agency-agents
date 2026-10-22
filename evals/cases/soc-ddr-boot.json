@@ -1,0 +1,26 @@
+{
+  "id": "soc-ddr-boot",
+  "language": "en",
+  "domain": "chip-platform",
+  "task": "The new SoC module does not boot. DDR training fails and the PMIC rail order does not match the boot config strap.",
+  "primary_agent": "SoC Hardware Platform Engineer",
+  "supporting_agents": ["FPGA Hardware Engineer"],
+  "checklist": [
+    {
+      "item": "Compare PMIC sequencing with the SoC power-up diagram",
+      "mentions": ["pmic", "sequencing"]
+    },
+    {
+      "item": "Check boot straps before replacing the DDR device",
+      "mentions": ["boot strap", "ddr"]
+    },
+    {
+      "item": "Record the failing training step and the rail voltages",
+      "mentions": ["training", "rail"]
+    },
+    {
+      "item": "Separate a power-order fault from a DDR routing fault",
+      "mentions": ["power-order", "routing"]
+    }
+  ]
+}

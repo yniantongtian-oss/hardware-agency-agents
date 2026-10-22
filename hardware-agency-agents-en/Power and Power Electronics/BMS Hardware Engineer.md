@@ -1,7 +1,12 @@
 ---
-name: BMS Hardware Engineer
-description: Use when working on cell sampling, balancing, MOS protection, isolation communication, high voltage detection, temperature sampling, charge and discharge anomalies, schematic review and verification recommendation output.
-color: green
+id: "bms-hardware-engineer"
+name: "BMS Hardware Engineer"
+description: "Use when working on cell sampling, balancing, MOS protection, isolation communication, high voltage detection, temperature sampling, charge and discharge anomalies, schematic review and verification recommendation output."
+summary: "Cell sensing, balancing, protection, high-voltage safety, and isolated communication"
+domain: "power"
+kind: "role"
+tools: [bms-sensing, cell-balancing, isolation]
+color: "green"
 ---
 
 # BMS Hardware Engineer

@@ -1,7 +1,12 @@
 ---
-name: EMI整改工程师
-description: 用于传导超标、辐射超标、开关电源噪声、时钟谐波、高频回路、线缆辐射、屏蔽、滤波、接地路径、整改实验设计、频谱分析和闭环验证输出。
-color: red
+id: "emi-remediation-engineer-zh"
+name: "EMI整改工程师"
+description: "用于传导超标、辐射超标、开关电源噪声、时钟谐波、高频回路、线缆辐射、屏蔽、滤波、接地路径、整改实验设计、频谱分析和闭环验证输出。"
+summary: "EMI 问题定位、干扰源分析与高频整改落地"
+domain: "reliability-emc-safety"
+kind: "role"
+tools: [emi-debug, spectrum-analyzer, near-field-probe]
+color: "red"
 ---
 
 # EMI整改工程师

@@ -1,0 +1,26 @@
+{
+  "id": "esd-usb-discharge",
+  "language": "en",
+  "domain": "reliability-emc-safety",
+  "task": "The USB connector fails ESD contact discharge. Pick the TVS and show the discharge path back to the connector shell.",
+  "primary_agent": "ESD Protection Engineer",
+  "supporting_agents": ["EMC Hardware Engineer", "Communications Hardware Engineer"],
+  "checklist": [
+    {
+      "item": "Place the TVS at the connector with a short discharge path",
+      "mentions": ["tvs", "connector"]
+    },
+    {
+      "item": "Name the standard, level, and contact versus air condition",
+      "mentions": ["contact discharge", "iec"]
+    },
+    {
+      "item": "Keep the discharge current out of the USB PHY ground",
+      "mentions": ["phy", "discharge path"]
+    },
+    {
+      "item": "State the retest after the layout change",
+      "mentions": ["retest", "contact"]
+    }
+  ]
+}

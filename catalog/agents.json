@@ -1,0 +1,1792 @@
+{
+  "generated_from": "agent frontmatter",
+  "agent_count": 110,
+  "agents": [
+    {
+      "id": "chip-platform-design-review",
+      "name": "Chip Platform and Board Co-Design Review Engineer",
+      "description": "Use when reviewing SoCs, FPGAs, CPLDs, PMICs, DDR, Flash, boot configuration, reference-design adaptation, power sequencing, multi-voltage domains, and vendor constraints.",
+      "summary": "Review for SoC, FPGA, DDR, PMIC, boot chains, and reference-design adaptation",
+      "domain": "chip-platform",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "ddr-bringup",
+        "pmic-sequencing",
+        "boot-config"
+      ],
+      "language": "en",
+      "color": "indigo",
+      "path": "hardware-design-review-validation/en/Chip Platform and Board Co-Design Review Engineer.md"
+    },
+    {
+      "id": "chip-applications-engineer",
+      "name": "Chip Applications Engineer (Hardware-Focused FAE AE)",
+      "description": "Use when working on typical application circuits, specification boundaries, customer issues, failure phenomena, device selection, reference design modification suggestions, verification methods and risk warning output.",
+      "summary": "Application support, reference design adaptation, and customer-facing hardware analysis",
+      "domain": "chip-platform",
+      "kind": "role",
+      "tools": [
+        "datasheet-review",
+        "reference-design",
+        "schematic-capture"
+      ],
+      "language": "en",
+      "color": "teal",
+      "path": "hardware-agency-agents-en/Chip Platforms and Low-Level Board Co-Design/Chip Applications Engineer - Hardware Focused FAE AE.md"
+    },
+    {
+      "id": "cpld-engineer",
+      "name": "CPLD Engineer",
+      "description": "Use when working on IO levels, timing control, glue logic, address decoding, configuration mode, interface exceptions, schematic review and debugging suggestion output.",
+      "summary": "Basic programmable logic, interface conversion, IO levels, timing, and configuration",
+      "domain": "chip-platform",
+      "kind": "role",
+      "tools": [
+        "programmable-logic",
+        "io-level",
+        "timing-analysis"
+      ],
+      "language": "en",
+      "color": "blue",
+      "path": "hardware-agency-agents-en/Chip Platforms and Low-Level Board Co-Design/CPLD Engineer.md"
+    },
+    {
+      "id": "fpga-hardware-engineer",
+      "name": "FPGA Hardware Engineer",
+      "description": "Use when working on multi-voltage domains, configuration interfaces, clocking, DDR, GT transceivers, high-speed IO, power-up sequencing, board review and constraint recommendation output.",
+      "summary": "FPGA power rails, clocks, configuration, multi-voltage domains, and high-speed IO",
+      "domain": "chip-platform",
+      "kind": "role",
+      "tools": [
+        "fpga-config",
+        "power-tree",
+        "high-speed-io"
+      ],
+      "language": "en",
+      "color": "indigo",
+      "path": "hardware-agency-agents-en/Chip Platforms and Low-Level Board Co-Design/FPGA Hardware Engineer.md"
+    },
+    {
+      "id": "soc-hardware-platform-engineer",
+      "name": "SoC Hardware Platform Engineer",
+      "description": "Use when working on DDR, PMIC, Boot configuration, high-speed interfaces, clock trees, power sequencing, boot exceptions, platform review and debug path output.",
+      "summary": "SoC/MPU platforms, DDR, power sequencing, PMIC coordination, and boot configuration",
+      "domain": "chip-platform",
+      "kind": "role",
+      "tools": [
+        "ddr-bringup",
+        "pmic-sequencing",
+        "boot-config"
+      ],
+      "language": "en",
+      "color": "slate",
+      "path": "hardware-agency-agents-en/Chip Platforms and Low-Level Board Co-Design/SoC Hardware Platform Engineer.md"
+    },
+    {
+      "id": "communications-design-review",
+      "name": "Communications and Interface Design Review Engineer",
+      "description": "Use when reviewing Ethernet, USB, CAN, RS485, LVDS, RF communication, isolated interfaces, connectors, cables, ESD, common-mode behavior, impedance, termination, and link testing.",
+      "summary": "Review for Ethernet, USB, CAN, RS485, LVDS, connectors, cables, and interface protection",
+      "domain": "communications",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "ethernet-phy",
+        "usb-signal",
+        "can-rs485"
+      ],
+      "language": "en",
+      "color": "cyan",
+      "path": "hardware-design-review-validation/en/Communications and Interface Design Review Engineer.md"
+    },
+    {
+      "id": "communications-hardware-engineer",
+      "name": "Communications Hardware Engineer",
+      "description": "Use when working on Ethernet, RS485, CAN, optical modules, SerDes, differential lines, impedance control, link anomalies, EMC risks, board-level review and debugging recommendation output.",
+      "summary": "Communication boards, high-speed interfaces, link debug, transmission lines, and EMC-aware design",
+      "domain": "communications",
+      "kind": "role",
+      "tools": [
+        "ethernet-phy",
+        "usb-signal",
+        "can-rs485",
+        "transmission-line"
+      ],
+      "language": "en",
+      "color": "indigo",
+      "path": "hardware-agency-agents-en/Communication and Interfaces/Communications Hardware Engineer.md"
+    },
+    {
+      "id": "embedded-hardware-design-review",
+      "name": "Embedded Hardware Design Review Engineer",
+      "description": "Use when reviewing MCU, MPU, minimum systems, reset, clocks, boot configuration, debug ports, peripheral interfaces, level compatibility, protection, board bring-up, and production-test access.",
+      "summary": "Review for MCU/MPU minimum systems, reset and clock circuits, boot configuration, interfaces, and debug access",
+      "domain": "embedded",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "mcu-minimum-system",
+        "clock-reset",
+        "boot-config"
+      ],
+      "language": "en",
+      "color": "green",
+      "path": "hardware-design-review-validation/en/Embedded Hardware Design Review Engineer.md"
+    },
+    {
+      "id": "automation-control-hardware-engineer",
+      "name": "Automation Control Hardware Engineer",
+      "description": "Use when working on PLC interface, sensor acquisition, actuator drive, industrial bus, isolation, protection, abnormal action, interlocking logic review and verification method output.",
+      "summary": "Automation control hardware, IO, relays, industrial buses, drives, and sensing",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "io-module",
+        "industrial-bus",
+        "relay-drive"
+      ],
+      "language": "en",
+      "color": "yellow",
+      "path": "hardware-agency-agents-en/Embedded Hardware/Automation Control Hardware Engineer.md"
+    },
+    {
+      "id": "control-board-hardware-engineer",
+      "name": "Control Board Hardware Engineer",
+      "description": "Use when working on main control, motor drive, sampling feedback, relays, isolated IO, protection links, fault interlocking, control board review and debugging recommendation output.",
+      "summary": "Controller main boards, functional boards, drive/protection design, and bring-up",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "schematic-capture",
+        "protection-circuit",
+        "power-tree"
+      ],
+      "language": "en",
+      "color": "orange",
+      "path": "hardware-agency-agents-en/Embedded Hardware/Control Board Hardware Engineer.md"
+    },
+    {
+      "id": "embedded-hardware-engineer",
+      "name": "Embedded Hardware Engineer",
+      "description": "Use when working on MCU/MPU peripherals, power tree, interface protection, schematic, PCB, EMI/ESD, startup exception, system joint debugging and design constraint output.",
+      "summary": "Board-level embedded hardware with MCU/MPU peripherals, interfaces, power, and joint debug",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "schematic-capture",
+        "peripheral-interface",
+        "power-tree"
+      ],
+      "language": "en",
+      "color": "steel",
+      "path": "hardware-agency-agents-en/Embedded Hardware/Embedded Hardware Engineer.md"
+    },
+    {
+      "id": "embedded-systems-hardware-engineer",
+      "name": "Embedded Systems Hardware Engineer",
+      "description": "Use when working on SoC/MPU, DDR, Flash, clocking, power sequencing, bus expansion, boot link, platform review, debug path and design checklist output.",
+      "summary": "Complex embedded platforms, DDR, Flash, buses, timing, and system architecture",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "ddr-bringup",
+        "flash-boot",
+        "timing-analysis"
+      ],
+      "language": "en",
+      "color": "slate",
+      "path": "hardware-agency-agents-en/Embedded Hardware/Embedded Systems Hardware Engineer.md"
+    },
+    {
+      "id": "industrial-control-hardware-engineer",
+      "name": "Industrial Control Hardware Engineer",
+      "description": "Use when working on isolated power supply, DI/DO, AI/AO, RS485, CAN, surge, lightning protection, wide temperature, on-site interference, industrial control board review and rectification suggestion output.",
+      "summary": "Industrial anti-interference, isolation, surge, lightning, and wide-temperature design",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "isolation",
+        "surge-protection",
+        "wide-temperature"
+      ],
+      "language": "en",
+      "color": "red",
+      "path": "hardware-agency-agents-en/Embedded Hardware/Industrial Control Hardware Engineer.md"
+    },
+    {
+      "id": "mcu-hardware-engineer",
+      "name": "MCU Hardware Engineer",
+      "description": "Use when working on VDD, reset, clock, download port, GPIO protection, startup failure, download exception, peripheral interface, schematic review and debugging suggestion output.",
+      "summary": "MCU minimum system, reset, clocks, download interface, and board debug",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "mcu-minimum-system",
+        "clock-reset",
+        "swd-jtag"
+      ],
+      "language": "en",
+      "color": "sky",
+      "path": "hardware-agency-agents-en/Embedded Hardware/MCU Hardware Engineer.md"
+    },
+    {
+      "id": "microcontroller-hardware-engineer",
+      "name": "Microcontroller Hardware Engineer",
+      "description": "Use when working on UART, SPI, I2C, buttons, relays, drivers, pull-up and pull-down, level matching, communication exceptions, control board review and debugging suggestion output.",
+      "summary": "Single-chip control hardware, buses, logic levels, pull-up/down handling, and protection",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "mcu-minimum-system",
+        "logic-level",
+        "protection-circuit"
+      ],
+      "language": "en",
+      "color": "light-blue",
+      "path": "hardware-agency-agents-en/Embedded Hardware/Microcontroller Hardware Engineer.md"
+    },
+    {
+      "id": "mixed-signal-design-review",
+      "name": "Digital Analog and Mixed-Signal Design Review Engineer",
+      "description": "Use when reviewing high-speed digital interfaces, clocks, sampling chains, op-amp filters, ADCs, DACs, references, grounding, isolation, noise, crosstalk, and measurement validation.",
+      "summary": "Review for high-speed digital, analog chains, ADC/DAC, references, noise, and crosstalk",
+      "domain": "mixed-signal",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "signal-integrity",
+        "analog-front-end",
+        "adc-reference"
+      ],
+      "language": "en",
+      "color": "purple",
+      "path": "hardware-design-review-validation/en/Digital Analog and Mixed-Signal Design Review Engineer.md"
+    },
+    {
+      "id": "analog-hardware-engineer",
+      "name": "Analog Hardware Engineer",
+      "description": "Use when working on op amps, filtering, references, sampling networks, gain distribution, stability, noise, distortion, schematic review and verification method output.",
+      "summary": "Op-amp circuits, filtering, signal conditioning, noise, and stability analysis",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "analog-front-end",
+        "filter-design",
+        "noise-analysis"
+      ],
+      "language": "en",
+      "color": "green",
+      "path": "hardware-agency-agents-en/Digital Analog and Mixed-Signal/Analog Hardware Engineer.md"
+    },
+    {
+      "id": "digital-hardware-engineer",
+      "name": "Digital Hardware Engineer",
+      "description": "Use when working on logic interface, bus definition, timing constraints, level compatibility, synchronous reset, anti-interference, timing exceptions, board-level review and debugging suggestion output.",
+      "summary": "Digital logic, timing constraints, interfaces, board implementation, and debug",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "timing-analysis",
+        "logic-analyzer",
+        "schematic-capture"
+      ],
+      "language": "en",
+      "color": "blue",
+      "path": "hardware-agency-agents-en/Digital Analog and Mixed-Signal/Digital Hardware Engineer.md"
+    },
+    {
+      "id": "high-speed-digital-engineer",
+      "name": "High-Speed Digital Circuit Engineer",
+      "description": "Use when working on DDR, LVDS, MIPI, USB, PCIe, clock tree, reflections, crosstalk, timing margin, link review and debug recommendation output.",
+      "summary": "High-speed interfaces, timing margin, reference planes, and board-level debug",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "signal-integrity",
+        "timing-analysis",
+        "oscilloscope"
+      ],
+      "language": "en",
+      "color": "indigo",
+      "path": "hardware-agency-agents-en/Digital Analog and Mixed-Signal/High-Speed Digital Circuit Engineer.md"
+    },
+    {
+      "id": "low-power-hardware-engineer",
+      "name": "Low-Power Hardware Engineer",
+      "description": "Use when working on sleep wake-up, power domain, leakage analysis, load switch, timing control, battery power supply, insufficient battery life, power consumption review and optimization suggestion output.",
+      "summary": "Battery-powered low-power planning, sleep/wake design, and power budgeting",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "power-budget",
+        "sleep-current",
+        "battery-profile"
+      ],
+      "language": "en",
+      "color": "lime",
+      "path": "hardware-agency-agents-en/Digital Analog and Mixed-Signal/Low-Power Hardware Engineer.md"
+    },
+    {
+      "id": "mixed-signal-hardware-engineer",
+      "name": "Mixed-Signal Hardware Engineer",
+      "description": "Use when working on analog ground and digital ground, sampling synchronization, isolation partition, power supply division, crosstalk, EMC, measurement noise, system joint debugging and rectification suggestion output.",
+      "summary": "Mixed-signal partitioning, grounding, sampling synchronization, and interference control",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "analog-front-end",
+        "grounding",
+        "adc-reference"
+      ],
+      "language": "en",
+      "color": "cyan",
+      "path": "hardware-agency-agents-en/Digital Analog and Mixed-Signal/Mixed-Signal Hardware Engineer.md"
+    },
+    {
+      "id": "signal-chain-hardware-engineer",
+      "name": "Signal Chain Hardware Engineer",
+      "description": "Use when working on sensor front-end, op amp, filtering, isolation, ADC drive, common mode rejection, high noise, accuracy drift, link review and modification suggestion output.",
+      "summary": "Sensor-to-processor signal conditioning, filtering, isolation, and error-chain analysis",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "analog-front-end",
+        "filter-design",
+        "adc-reference"
+      ],
+      "language": "en",
+      "color": "amber",
+      "path": "hardware-agency-agents-en/Digital Analog and Mixed-Signal/Signal Chain Hardware Engineer.md"
+    },
+    {
+      "id": "stm32-hardware-engineer",
+      "name": "STM32 Hardware Engineer",
+      "description": "Use when working on STM32 minimum system, VDD, VDDA, VREF, BOOT, NRST, SWD, HSE, LSE, ADC, interface protection, decoupling, download failure, crystal oscillator failure, ADC noise, schematic review and debugging suggestion output.",
+      "summary": "STM32 minimum system, Boot, SWD, ADC reference, and peripheral board design",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "mcu-minimum-system",
+        "swd-jtag",
+        "adc-reference"
+      ],
+      "language": "en",
+      "color": "violet",
+      "path": "hardware-agency-agents-en/Digital Analog and Mixed-Signal/STM32 Hardware Engineer.md"
+    },
+    {
+      "id": "pcb-board-design-review",
+      "name": "PCB and Board-Level Design Review Engineer",
+      "description": "Use when working on pre-release review of schematics, PCB layout, stackup, impedance, return paths, manufacturability, assembly, BOM, test points, and production outputs with Blocker, Major, Minor, and Question findings.",
+      "summary": "Board implementation review for schematics, PCB layout, stackup, impedance, manufacturing data, and test points",
+      "domain": "pcb-board",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "pcb-layout",
+        "dfm",
+        "signal-integrity"
+      ],
+      "language": "en",
+      "color": "blue",
+      "path": "hardware-design-review-validation/en/PCB and Board-Level Design Review Engineer.md"
+    },
+    {
+      "id": "dfa-engineer",
+      "name": "DFA Engineer",
+      "description": "Use when working on device spacing, welding direction, stencil opening, reworkability, SMT/DIP assembly constraints, risk of soldering soldering, assembly review and DFA rectification suggestion output.",
+      "summary": "Design for assembly, soldering risk, component spacing, orientation, and reworkability",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "dfa",
+        "assembly-process",
+        "footprint-check"
+      ],
+      "language": "en",
+      "color": "yellow",
+      "path": "hardware-agency-agents-en/PCB and Board-Level Implementation/DFA Engineer.md"
+    },
+    {
+      "id": "dfm-engineer",
+      "name": "DFM Engineer",
+      "description": "Use when working on minimum line width and line spacing, via process, panelization, solder mask bridge, Gerber manufacturing data, production anomaly prevention, DFM review and manufacturing risk list output.",
+      "summary": "Design for manufacturability, process limits, panelization, via process, and fabrication data review",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "dfm",
+        "fabrication-notes",
+        "panelization"
+      ],
+      "language": "en",
+      "color": "amber",
+      "path": "hardware-agency-agents-en/PCB and Board-Level Implementation/DFM Engineer.md"
+    },
+    {
+      "id": "hardware-process-engineer",
+      "name": "Hardware Process Engineer",
+      "description": "Use when working on SMT, DIP, reflow soldering, wave soldering, oven temperature profile, process window, welding defects, trial production introduction, process review and manufacturing improvement suggestion output.",
+      "summary": "SMT/DIP process, manufacturing introduction, and process coordination",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "smt-process",
+        "assembly-process",
+        "dfm"
+      ],
+      "language": "en",
+      "color": "brown",
+      "path": "hardware-agency-agents-en/PCB and Board-Level Implementation/Hardware Process Engineer.md"
+    },
+    {
+      "id": "high-speed-pcb-engineer",
+      "name": "High-Speed PCB Engineer",
+      "description": "Use when working on DDR, PCIe, USB, SerDes, Differential Pair, Equal Length, Impedance, Reference Planes, Via Optimization, High Speed ​​Link Review and Routing Constraint Output.",
+      "summary": "High-speed board constraints, differential routing, length matching, impedance, and crosstalk control",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "pcb-layout",
+        "impedance-control",
+        "length-matching",
+        "signal-integrity"
+      ],
+      "language": "en",
+      "color": "indigo",
+      "path": "hardware-agency-agents-en/PCB and Board-Level Implementation/High-Speed PCB Engineer.md"
+    },
+    {
+      "id": "pcb-footprint-library-engineer",
+      "name": "PCB Footprint Library Engineer",
+      "description": "Use when working on IPC pads, package naming, 3D models, silkscreen markings, odd-shaped packages, package size errors, library review, and package checklist output.",
+      "summary": "Footprint library quality, pad rules, 3D models, and naming standards",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "footprint-library",
+        "padstack",
+        "datasheet-review"
+      ],
+      "language": "en",
+      "color": "green",
+      "path": "hardware-agency-agents-en/PCB and Board-Level Implementation/PCB Footprint Library Engineer.md"
+    },
+    {
+      "id": "pcb-hardware-engineer",
+      "name": "PCB Hardware Engineer",
+      "description": "Use when working on schematic layout, device constraints, layout and routing, power integrity, signal integrity, EMC/ESD, DFM/DFT, board-level review and production data output.",
+      "summary": "End-to-end board implementation from schematic to manufacturable PCB with SI, PI, EMC, DFM, and outputs",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "schematic-capture",
+        "pcb-layout",
+        "signal-integrity",
+        "power-integrity",
+        "dfm"
+      ],
+      "language": "en",
+      "color": "teal",
+      "path": "hardware-agency-agents-en/PCB and Board-Level Implementation/PCB Hardware Engineer.md"
+    },
+    {
+      "id": "pcb-layout-engineer",
+      "name": "PCB Layout Engineer",
+      "description": "Use when working on device layout, trace planning, stack-up design, impedance control, differential lines, equal lengths, vias, return paths, power ground planes, Layout review and modification suggestion output.",
+      "summary": "Layout and routing quality, stackup planning, constraints, impedance, vias, and return paths",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "pcb-layout",
+        "stackup",
+        "impedance-control"
+      ],
+      "language": "en",
+      "color": "cyan",
+      "path": "hardware-agency-agents-en/PCB and Board-Level Implementation/PCB Layout Engineer.md"
+    },
+    {
+      "id": "rf-hardware-engineer",
+      "name": "RF Hardware Engineer",
+      "description": "Use when working on matching network, antenna interface, PA/LNA, S-parameters, standing wave, gain, noise figure, RF debugging, link problem analysis and modification suggestion output.",
+      "summary": "RF front-end implementation, impedance matching, antenna coordination, and RF debug",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "rf-matching",
+        "vna",
+        "spectrum-analyzer"
+      ],
+      "language": "en",
+      "color": "magenta",
+      "path": "hardware-agency-agents-en/PCB and Board-Level Implementation/RF Hardware Engineer.md"
+    },
+    {
+      "id": "si-pi-engineer",
+      "name": "SI/PI Engineer",
+      "description": "Use when working on high-speed interfaces, reflections, crosstalk, impedance discontinuities, differential channels, ground bounce, power supply noise, decoupling networks, PDN, SI/PI risk location and rectification constraint output.",
+      "summary": "Signal integrity and power integrity modeling, simulation, diagnosis, and correction",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "signal-integrity",
+        "power-integrity",
+        "field-solver"
+      ],
+      "language": "en",
+      "color": "purple",
+      "path": "hardware-agency-agents-en/PCB and Board-Level Implementation/SI-PI Engineer.md"
+    },
+    {
+      "id": "power-design-review",
+      "name": "Power and Power Electronics Design Review Engineer",
+      "description": "Use when reviewing AC/DC, DC/DC, LDOs, power trees, power devices, magnetics, loop compensation, ripple, transients, protection, thermal design, EMI, and power PCB layout.",
+      "summary": "Review for power trees, power stages, loops, ripple, transients, protection, thermal behavior, and EMI",
+      "domain": "power",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "power-tree",
+        "loop-compensation",
+        "thermal-design"
+      ],
+      "language": "en",
+      "color": "orange",
+      "path": "hardware-design-review-validation/en/Power and Power Electronics Design Review Engineer.md"
+    },
+    {
+      "id": "bms-hardware-engineer",
+      "name": "BMS Hardware Engineer",
+      "description": "Use when working on cell sampling, balancing, MOS protection, isolation communication, high voltage detection, temperature sampling, charge and discharge anomalies, schematic review and verification recommendation output.",
+      "summary": "Cell sensing, balancing, protection, high-voltage safety, and isolated communication",
+      "domain": "power",
+      "kind": "role",
+      "tools": [
+        "bms-sensing",
+        "cell-balancing",
+        "isolation"
+      ],
+      "language": "en",
+      "color": "green",
+      "path": "hardware-agency-agents-en/Power and Power Electronics/BMS Hardware Engineer.md"
+    },
+    {
+      "id": "energy-storage-hardware-engineer",
+      "name": "Energy Storage Hardware Engineer",
+      "description": "Use when working on BMS, PCS interface, busbar sampling, high voltage safety, precharging, contactors, thermal management, energy storage cabinet review and test recommendation output.",
+      "summary": "Energy storage modules, power conversion, protection, and thermal management",
+      "domain": "power",
+      "kind": "role",
+      "tools": [
+        "power-conversion",
+        "thermal-design",
+        "protection-circuit"
+      ],
+      "language": "en",
+      "color": "purple",
+      "path": "hardware-agency-agents-en/Power and Power Electronics/Energy Storage Hardware Engineer.md"
+    },
+    {
+      "id": "motor-drive-hardware-engineer",
+      "name": "Motor Drive Hardware Engineer",
+      "description": "Use when working on half-bridge, full-bridge, gate drive, current sampling, bus voltage, over-current protection, dead zone, startup abnormality, debugging steps and rectification suggestion output.",
+      "summary": "Half-bridge/full-bridge topology, current sensing, protection, and motor-drive control boards",
+      "domain": "power",
+      "kind": "role",
+      "tools": [
+        "inverter-bridge",
+        "current-sense",
+        "gate-drive"
+      ],
+      "language": "en",
+      "color": "blue",
+      "path": "hardware-agency-agents-en/Power and Power Electronics/Motor Drive Hardware Engineer.md"
+    },
+    {
+      "id": "power-electronics-engineer",
+      "name": "Power Electronics Engineer",
+      "description": "Use when working on Buck, Boost, PFC, Inverter, Magnetic, Driver, Switching Loss, Thermal Design, Loop Review and Verification Method Outputs.",
+      "summary": "Mid/high-power conversion, gate drive, magnetics, thermal design, and loss analysis",
+      "domain": "power",
+      "kind": "role",
+      "tools": [
+        "gate-drive",
+        "magnetics",
+        "loss-analysis",
+        "thermal-design"
+      ],
+      "language": "en",
+      "color": "red",
+      "path": "hardware-agency-agents-en/Power and Power Electronics/Power Electronics Engineer.md"
+    },
+    {
+      "id": "power-hardware-engineer",
+      "name": "Power Hardware Engineer",
+      "description": "Use when working on AC/DC, DC/DC, LDOs, power trees, loop stability, ripple, transients, temperature rise, EMI, protection circuits, device selection, schematic review, PCB power layout constraints and test verification outputs.",
+      "summary": "AC/DC, DC/DC, LDO, power trees, compensation, thermal design, and protection strategies",
+      "domain": "power",
+      "kind": "role",
+      "tools": [
+        "power-tree",
+        "loop-compensation",
+        "electronic-load"
+      ],
+      "language": "en",
+      "color": "orange",
+      "path": "hardware-agency-agents-en/Power and Power Electronics/Power Hardware Engineer.md"
+    },
+    {
+      "id": "reliability-emc-safety-design-review",
+      "name": "Reliability EMC and Safety Design Review Engineer",
+      "description": "Use when reviewing derating, temperature rise, ESD, surge, EMI, insulation, creepage, clearance, electrical safety, environmental stress, certification data, and corrective-action closure.",
+      "summary": "Risk review for derating, temperature rise, ESD, surge, EMC, safety distances, and certification data",
+      "domain": "reliability-emc-safety",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "derating",
+        "emc-scan",
+        "safety-spacing"
+      ],
+      "language": "en",
+      "color": "red",
+      "path": "hardware-design-review-validation/en/Reliability EMC and Safety Design Review Engineer.md"
+    },
+    {
+      "id": "certification-engineer",
+      "name": "Certification Engineer (CE FCC UL and More)",
+      "description": "Use when working on CE, FCC, UL, EMC, safety regulations, wireless regulations, data lists, test rectification, certification path evaluation and test deliverable output.",
+      "summary": "Regulatory certification documents, lab coordination, and corrective support",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "certification-dossier",
+        "emc-scan",
+        "safety-report"
+      ],
+      "language": "en",
+      "color": "violet",
+      "path": "hardware-agency-agents-en/Reliability EMC and Safety/Certification Engineer - CE FCC UL and More.md"
+    },
+    {
+      "id": "emc-hardware-engineer",
+      "name": "EMC Hardware Engineer",
+      "description": "Use when working on EMI, EMS, conducted emissions, radiated emissions, static electricity, surges, filtering, grounding, shielding, interface protection, board-level and system-level EMC risk analysis, remediation recommendations and verification plan output.",
+      "summary": "EMC design, diagnosis, and closure from board level to system level",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "emc-scan",
+        "spectrum-analyzer",
+        "esd-test"
+      ],
+      "language": "en",
+      "color": "indigo",
+      "path": "hardware-agency-agents-en/Reliability EMC and Safety/EMC Hardware Engineer.md"
+    },
+    {
+      "id": "emi-remediation-engineer",
+      "name": "EMI Remediation Engineer",
+      "description": "Use when working on excessive conduction, excessive radiation, switching power supply noise, clock harmonics, high-frequency loops, cable radiation, shielding, filtering, grounding paths, rectification experimental design, spectrum analysis and closed-loop verification output.",
+      "summary": "EMI problem localization, interference source analysis, and corrective actions",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "emi-debug",
+        "spectrum-analyzer",
+        "near-field-probe"
+      ],
+      "language": "en",
+      "color": "red",
+      "path": "hardware-agency-agents-en/Reliability EMC and Safety/EMI Remediation Engineer.md"
+    },
+    {
+      "id": "environmental-test-engineer",
+      "name": "Environmental Test Engineer",
+      "description": "Use when working on high and low temperature, temperature cycle, vibration, drop, aging, damp and heat, stress screening, failure reproduction, test records, problem archiving and verification conclusion output.",
+      "summary": "Temperature, vibration, drop, aging, and environmental stress testing",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "environmental-chamber",
+        "vibration-test",
+        "thermal-chamber"
+      ],
+      "language": "en",
+      "color": "teal",
+      "path": "hardware-agency-agents-en/Reliability EMC and Safety/Environmental Test Engineer.md"
+    },
+    {
+      "id": "esd-protection-engineer",
+      "name": "ESD Protection Engineer",
+      "description": "Use when working on TVS selection, interface discharge path, ground loop, air discharge, contact discharge, port damage, layout review, protection scheme and verification recommendation output.",
+      "summary": "ESD protection schemes, TVS selection, discharge paths, and interface protection",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "esd-test",
+        "tvs-selection",
+        "interface-protection"
+      ],
+      "language": "en",
+      "color": "cyan",
+      "path": "hardware-agency-agents-en/Reliability EMC and Safety/ESD Protection Engineer.md"
+    },
+    {
+      "id": "failure-analysis-engineer",
+      "name": "Failure Analysis Engineer",
+      "description": "Use when working on burnout, short circuit, open circuit, intermittent failure, welding defects, device failure modes, recurrence paths, slice anatomy, evidence chain analysis and root cause conclusion output.",
+      "summary": "Failure reproduction, root cause analysis, component failure modes, and stress-related faults",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "failure-analysis",
+        "microscope",
+        "decapsulation"
+      ],
+      "language": "en",
+      "color": "brown",
+      "path": "hardware-agency-agents-en/Reliability EMC and Safety/Failure Analysis Engineer.md"
+    },
+    {
+      "id": "hardware-reliability-engineer",
+      "name": "Hardware Reliability Engineer",
+      "description": "Use when working on derating design, temperature rise, stress analysis, MTBF, life model, environmental suitability, early failure, reliability review and verification plan output.",
+      "summary": "Derating, lifetime, thermal stress, environmental robustness, and MTBF-related methods",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "derating",
+        "fmea",
+        "mtbf"
+      ],
+      "language": "en",
+      "color": "green",
+      "path": "hardware-agency-agents-en/Reliability EMC and Safety/Hardware Reliability Engineer.md"
+    },
+    {
+      "id": "safety-compliance-engineer",
+      "name": "Safety Compliance Engineer",
+      "description": "Use when working on creepage distance, electrical clearance, insulation level, leakage current, grounding protection, withstand voltage, single fault, safety review, rectification suggestions and test checklist output.",
+      "summary": "Electrical safety design, insulation boundaries, risk assessment, and certification preparation",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "safety-spacing",
+        "hipot",
+        "insulation-coordination"
+      ],
+      "language": "en",
+      "color": "blue",
+      "path": "hardware-agency-agents-en/Reliability EMC and Safety/Safety Compliance Engineer.md"
+    },
+    {
+      "id": "test-validation-review",
+      "name": "Testing and Validation Review Engineer",
+      "description": "Use when reviewing EVT, DVT, PVT, validation plans, test coverage, sample size, instrument setup, fixtures, data records, issue closure, entry and exit gates, and production-test strategy.",
+      "summary": "Review for EVT, DVT, PVT, test coverage, sample size, data records, and issue closure",
+      "domain": "test-validation",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "evt-dvt",
+        "test-plan",
+        "validation-plan"
+      ],
+      "language": "en",
+      "color": "teal",
+      "path": "hardware-design-review-validation/en/Testing and Validation Review Engineer.md"
+    },
+    {
+      "id": "automated-test-hardware-engineer",
+      "name": "Automated Test Hardware Engineer",
+      "description": "Use when working on fixtures, switching matrix, interface control, script linkage, production test links, data collection, repetitive problems, platform review and test plan output.",
+      "summary": "Test fixtures, interface control, production test links, and automation platforms",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "fixture-design",
+        "instrument-control",
+        "boundary-scan"
+      ],
+      "language": "en",
+      "color": "green",
+      "path": "hardware-agency-agents-en/Testing and Validation/Automated Test Hardware Engineer.md"
+    },
+    {
+      "id": "board-level-debug-engineer",
+      "name": "Board-Level Debug Engineer",
+      "description": "Use when working on power supply timing, reset, clock, download interface, communication exception, short circuit, overcurrent, startup failure, waveform measurement, fault isolation, root cause analysis and retest recommendation output.",
+      "summary": "Power-up, clocks, reset, interfaces, and fault localization",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "oscilloscope",
+        "logic-analyzer",
+        "power-on-debug"
+      ],
+      "language": "en",
+      "color": "orange",
+      "path": "hardware-agency-agents-en/Testing and Validation/Board-Level Debug Engineer.md"
+    },
+    {
+      "id": "evt-dvt-engineer",
+      "name": "EVT/DVT Engineer",
+      "description": "Use when working on prototype verification, stage entry, defect tracking, boundary conditions, regression testing, design maturity assessment, risk list and release recommendation output.",
+      "summary": "Engineering sample validation, risk identification, and maturity judgment",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "evt-dvt",
+        "test-plan",
+        "issue-tracker"
+      ],
+      "language": "en",
+      "color": "violet",
+      "path": "hardware-agency-agents-en/Testing and Validation/EVT-DVT Engineer.md"
+    },
+    {
+      "id": "hardware-test-engineer",
+      "name": "Hardware Test Engineer",
+      "description": "Use when working on functional testing, performance testing, boundary conditions, stability, exception recurrence, measurement judgment, test cases, problem records and test conclusion output.",
+      "summary": "Functional, performance, boundary, and stability testing",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "test-plan",
+        "oscilloscope",
+        "boundary-test"
+      ],
+      "language": "en",
+      "color": "blue",
+      "path": "hardware-agency-agents-en/Testing and Validation/Hardware Test Engineer.md"
+    },
+    {
+      "id": "hardware-validation-engineer",
+      "name": "Hardware Validation Engineer",
+      "description": "Use when working on EVT, DVT, PVT, prototype testing, requirements coverage, test cases, boundary conditions, issue tracking, risk closure, entry judgment, verification reports and design maturity assessment output.",
+      "summary": "Validation planning, defect closure, and EVT/DVT/PVT gate decisions",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "validation-plan",
+        "evt-dvt",
+        "issue-tracker"
+      ],
+      "language": "en",
+      "color": "indigo",
+      "path": "hardware-agency-agents-en/Testing and Validation/Hardware Validation Engineer.md"
+    },
+    {
+      "id": "lab-test-engineer",
+      "name": "Lab Test Engineer",
+      "description": "Use when working on oscilloscopes, power supplies, electronic loads, spectrum analyzers, working condition setup, test records, abnormal retests, result archiving and test report output.",
+      "summary": "Lab instruments, execution discipline, data capture, and repeatability",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "oscilloscope",
+        "lab-notebook",
+        "instrument-control"
+      ],
+      "language": "en",
+      "color": "teal",
+      "path": "hardware-agency-agents-en/Testing and Validation/Lab Test Engineer.md"
+    },
+    {
+      "id": "chip-platform-design-review-zh",
+      "name": "芯片平台与板级协同评审工程师",
+      "description": "用于评审 SoC、FPGA、CPLD、PMIC、DDR、Flash、启动配置、参考设计落地、电源时序、多电压域和芯片厂商约束。",
+      "summary": "面向 SoC、FPGA、DDR、PMIC、启动链路和参考设计落地的评审",
+      "domain": "chip-platform",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "ddr-bringup",
+        "pmic-sequencing",
+        "boot-config"
+      ],
+      "language": "zh",
+      "color": "indigo",
+      "path": "hardware-design-review-validation/cn/芯片平台与板级协同评审工程师.md"
+    },
+    {
+      "id": "chip-applications-engineer-zh",
+      "name": "芯片应用工程师（FAE/AE偏硬件）",
+      "description": "用于典型应用电路、规格边界、客户问题、失效现象、器件选型、参考设计修改建议、验证方法和风险提示输出。",
+      "summary": "芯片应用支持、参考设计落地与客户问题分析",
+      "domain": "chip-platform",
+      "kind": "role",
+      "tools": [
+        "datasheet-review",
+        "reference-design",
+        "schematic-capture"
+      ],
+      "language": "zh",
+      "color": "teal",
+      "path": "hardware-agency-agents-cn/芯片平台与底层板级协同方向/芯片应用工程师（FAE_AE偏硬件）.md"
+    },
+    {
+      "id": "cpld-engineer-zh",
+      "name": "CPLD工程师",
+      "description": "用于 IO 电平、时序控制、胶合逻辑、地址译码、配置方式、接口异常、原理图评审和调试建议输出。",
+      "summary": "简单逻辑控制、接口转换、IO 电平与配置方式",
+      "domain": "chip-platform",
+      "kind": "role",
+      "tools": [
+        "programmable-logic",
+        "io-level",
+        "timing-analysis"
+      ],
+      "language": "zh",
+      "color": "blue",
+      "path": "hardware-agency-agents-cn/芯片平台与底层板级协同方向/CPLD工程师.md"
+    },
+    {
+      "id": "fpga-hardware-engineer-zh",
+      "name": "FPGA硬件工程师",
+      "description": "用于多电压域、配置接口、时钟、DDR、GT 收发器、高速 IO、上电时序、板级评审和约束建议输出。",
+      "summary": "FPGA 供电、时钟、配置接口、多电压域与高速 IO",
+      "domain": "chip-platform",
+      "kind": "role",
+      "tools": [
+        "fpga-config",
+        "power-tree",
+        "high-speed-io"
+      ],
+      "language": "zh",
+      "color": "indigo",
+      "path": "hardware-agency-agents-cn/芯片平台与底层板级协同方向/FPGA硬件工程师.md"
+    },
+    {
+      "id": "soc-hardware-platform-engineer-zh",
+      "name": "SoC硬件平台工程师",
+      "description": "用于 DDR、PMIC、Boot 配置、高速接口、时钟树、电源时序、启动异常、平台评审和调试路径输出。",
+      "summary": "SoC/MPU 平台、DDR、电源时序、PMIC 与启动配置",
+      "domain": "chip-platform",
+      "kind": "role",
+      "tools": [
+        "ddr-bringup",
+        "pmic-sequencing",
+        "boot-config"
+      ],
+      "language": "zh",
+      "color": "slate",
+      "path": "hardware-agency-agents-cn/芯片平台与底层板级协同方向/SoC硬件平台工程师.md"
+    },
+    {
+      "id": "communications-design-review-zh",
+      "name": "通信与接口评审工程师",
+      "description": "用于评审以太网、USB、CAN、RS485、LVDS、射频通信、隔离接口、连接器、线缆、ESD、共模、阻抗、端接和链路测试。",
+      "summary": "面向以太网、USB、CAN、RS485、LVDS、连接器、线缆和接口保护的评审",
+      "domain": "communications",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "ethernet-phy",
+        "usb-signal",
+        "can-rs485"
+      ],
+      "language": "zh",
+      "color": "cyan",
+      "path": "hardware-design-review-validation/cn/通信与接口评审工程师.md"
+    },
+    {
+      "id": "communications-hardware-engineer-zh",
+      "name": "通信硬件工程师",
+      "description": "用于 Ethernet、RS485、CAN、光模块、SerDes、差分线、阻抗控制、链路异常、EMC 风险、板级评审和调试建议输出。",
+      "summary": "通信板卡、高速接口、链路调试、传输线与 EMC 协同设计",
+      "domain": "communications",
+      "kind": "role",
+      "tools": [
+        "ethernet-phy",
+        "usb-signal",
+        "can-rs485",
+        "transmission-line"
+      ],
+      "language": "zh",
+      "color": "indigo",
+      "path": "hardware-agency-agents-cn/通信与接口方向/通信硬件工程师.md"
+    },
+    {
+      "id": "embedded-hardware-design-review-zh",
+      "name": "嵌入式硬件评审工程师",
+      "description": "用于评审 MCU、MPU、最小系统、复位、时钟、启动配置、下载调试接口、外设接口、电平匹配、保护、板级联调和量产测试入口。",
+      "summary": "面向 MCU/MPU 最小系统、复位时钟、启动配置、接口和调试入口的评审",
+      "domain": "embedded",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "mcu-minimum-system",
+        "clock-reset",
+        "boot-config"
+      ],
+      "language": "zh",
+      "color": "green",
+      "path": "hardware-design-review-validation/cn/嵌入式硬件评审工程师.md"
+    },
+    {
+      "id": "automation-control-hardware-engineer-zh",
+      "name": "自动化控制硬件工程师",
+      "description": "用于 PLC 接口、传感器采集、执行器驱动、工业总线、隔离、防护、动作异常、联锁逻辑评审和验证方法输出。",
+      "summary": "自动化设备控制硬件、IO、继电器、工业总线与驱动采集",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "io-module",
+        "industrial-bus",
+        "relay-drive"
+      ],
+      "language": "zh",
+      "color": "yellow",
+      "path": "hardware-agency-agents-cn/嵌入式硬件方向/自动化控制硬件工程师.md"
+    },
+    {
+      "id": "control-board-hardware-engineer-zh",
+      "name": "控制板硬件工程师",
+      "description": "用于主控、电机驱动、采样反馈、继电器、隔离 IO、保护链路、故障联锁、控制板评审和调试建议输出。",
+      "summary": "控制主板与功能板设计、驱动保护与联调",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "schematic-capture",
+        "protection-circuit",
+        "power-tree"
+      ],
+      "language": "zh",
+      "color": "orange",
+      "path": "hardware-agency-agents-cn/嵌入式硬件方向/控制板硬件工程师.md"
+    },
+    {
+      "id": "embedded-hardware-engineer-zh",
+      "name": "嵌入式硬件工程师",
+      "description": "用于 MCU/MPU 外围、电源树、接口保护、原理图、PCB、EMI/ESD、启动异常、系统联调和设计约束输出。",
+      "summary": "MCU/MPU 板级系统开发、接口、电源与联调",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "schematic-capture",
+        "peripheral-interface",
+        "power-tree"
+      ],
+      "language": "zh",
+      "color": "steel",
+      "path": "hardware-agency-agents-cn/嵌入式硬件方向/嵌入式硬件工程师.md"
+    },
+    {
+      "id": "embedded-systems-hardware-engineer-zh",
+      "name": "嵌入式系统硬件工程师",
+      "description": "用于 SoC/MPU、DDR、Flash、时钟、电源时序、总线扩展、启动链路、平台评审、调试路径和设计检查清单输出。",
+      "summary": "高复杂度嵌入式平台、DDR、Flash、总线与时序设计",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "ddr-bringup",
+        "flash-boot",
+        "timing-analysis"
+      ],
+      "language": "zh",
+      "color": "slate",
+      "path": "hardware-agency-agents-cn/嵌入式硬件方向/嵌入式系统硬件工程师.md"
+    },
+    {
+      "id": "industrial-control-hardware-engineer-zh",
+      "name": "工控硬件工程师",
+      "description": "用于隔离电源、DI/DO、AI/AO、RS485、CAN、浪涌、防雷、宽温、现场干扰、工控板评审和整改建议输出。",
+      "summary": "工业现场抗干扰、隔离、浪涌、防雷与宽温设计",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "isolation",
+        "surge-protection",
+        "wide-temperature"
+      ],
+      "language": "zh",
+      "color": "red",
+      "path": "hardware-agency-agents-cn/嵌入式硬件方向/工控硬件工程师.md"
+    },
+    {
+      "id": "mcu-hardware-engineer-zh",
+      "name": "MCU硬件工程师",
+      "description": "用于 VDD、复位、时钟、下载口、GPIO 保护、启动失败、下载异常、外围接口、原理图评审和调试建议输出。",
+      "summary": "MCU 最小系统、复位时钟、下载接口与板级调试",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "mcu-minimum-system",
+        "clock-reset",
+        "swd-jtag"
+      ],
+      "language": "zh",
+      "color": "sky",
+      "path": "hardware-agency-agents-cn/嵌入式硬件方向/MCU硬件工程师.md"
+    },
+    {
+      "id": "microcontroller-hardware-engineer-zh",
+      "name": "单片机硬件工程师",
+      "description": "用于 UART、SPI、I2C、按键、继电器、驱动、上拉下拉、电平匹配、通信异常、控制板评审和调试建议输出。",
+      "summary": "单片机控制类外围设计、总线、电平与保护",
+      "domain": "embedded",
+      "kind": "role",
+      "tools": [
+        "mcu-minimum-system",
+        "logic-level",
+        "protection-circuit"
+      ],
+      "language": "zh",
+      "color": "light-blue",
+      "path": "hardware-agency-agents-cn/嵌入式硬件方向/单片机硬件工程师.md"
+    },
+    {
+      "id": "mixed-signal-design-review-zh",
+      "name": "数字模拟混合信号评审工程师",
+      "description": "用于评审高速数字接口、时钟、采样链路、运放滤波、ADC/DAC、参考源、接地分区、隔离、噪声、串扰和测量验证方案。",
+      "summary": "面向高速数字、模拟链路、ADC/DAC、参考源、噪声和串扰的评审",
+      "domain": "mixed-signal",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "signal-integrity",
+        "analog-front-end",
+        "adc-reference"
+      ],
+      "language": "zh",
+      "color": "purple",
+      "path": "hardware-design-review-validation/cn/数字模拟混合信号评审工程师.md"
+    },
+    {
+      "id": "analog-hardware-engineer-zh",
+      "name": "模拟硬件工程师",
+      "description": "用于运放、滤波、基准源、采样网络、增益分配、稳定性、噪声、失真、原理图评审和验证方法输出。",
+      "summary": "运放、滤波、采样调理、噪声与稳定性分析",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "analog-front-end",
+        "filter-design",
+        "noise-analysis"
+      ],
+      "language": "zh",
+      "color": "green",
+      "path": "hardware-agency-agents-cn/数字-模拟-混合信号方向/模拟硬件工程师.md"
+    },
+    {
+      "id": "digital-hardware-engineer-zh",
+      "name": "数字硬件工程师",
+      "description": "用于逻辑接口、总线定义、时序约束、电平兼容、同步复位、抗干扰、时序异常、板级评审和调试建议输出。",
+      "summary": "数字逻辑、电路时序、总线协议与板级实现",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "timing-analysis",
+        "logic-analyzer",
+        "schematic-capture"
+      ],
+      "language": "zh",
+      "color": "blue",
+      "path": "hardware-agency-agents-cn/数字-模拟-混合信号方向/数字硬件工程师.md"
+    },
+    {
+      "id": "high-speed-digital-engineer-zh",
+      "name": "高速数字电路工程师",
+      "description": "用于 DDR、LVDS、MIPI、USB、PCIe、时钟树、反射、串扰、时序裕量、链路评审和调试建议输出。",
+      "summary": "高速接口、时序裕量、参考平面与板级调试",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "signal-integrity",
+        "timing-analysis",
+        "oscilloscope"
+      ],
+      "language": "zh",
+      "color": "indigo",
+      "path": "hardware-agency-agents-cn/数字-模拟-混合信号方向/高速数字电路工程师.md"
+    },
+    {
+      "id": "low-power-hardware-engineer-zh",
+      "name": "低功耗硬件工程师",
+      "description": "用于休眠唤醒、电源域、漏电分析、负载开关、时序控制、电池供电、续航不足、功耗评审和优化建议输出。",
+      "summary": "电池供电系统的功耗建模、休眠唤醒与续航闭环",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "power-budget",
+        "sleep-current",
+        "battery-profile"
+      ],
+      "language": "zh",
+      "color": "lime",
+      "path": "hardware-agency-agents-cn/数字-模拟-混合信号方向/低功耗硬件工程师.md"
+    },
+    {
+      "id": "mixed-signal-hardware-engineer-zh",
+      "name": "数模混合硬件工程师",
+      "description": "用于模拟地数字地、采样同步、隔离分区、电源划分、串扰、EMC、测量噪声、系统联调和整改建议输出。",
+      "summary": "模数混合系统、隔离分区、采样同步与串扰控制",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "analog-front-end",
+        "grounding",
+        "adc-reference"
+      ],
+      "language": "zh",
+      "color": "cyan",
+      "path": "hardware-agency-agents-cn/数字-模拟-混合信号方向/数模混合硬件工程师.md"
+    },
+    {
+      "id": "signal-chain-hardware-engineer-zh",
+      "name": "信号链硬件工程师",
+      "description": "用于传感器前端、运放、滤波、隔离、ADC 驱动、共模抑制、噪声偏高、精度漂移、链路评审和修改建议输出。",
+      "summary": "传感器到处理器的信号调理、滤波、隔离与误差链分析",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "analog-front-end",
+        "filter-design",
+        "adc-reference"
+      ],
+      "language": "zh",
+      "color": "amber",
+      "path": "hardware-agency-agents-cn/数字-模拟-混合信号方向/信号链硬件工程师.md"
+    },
+    {
+      "id": "stm32-hardware-engineer-zh",
+      "name": "STM32硬件工程师",
+      "description": "用于 STM32 最小系统、VDD、VDDA、VREF、BOOT、NRST、SWD、HSE、LSE、ADC、接口保护、去耦、下载失败、晶振不起振、ADC 噪声、原理图评审和调试建议输出。",
+      "summary": "STM32 最小系统、Boot、SWD、ADC 参考与外围设计",
+      "domain": "mixed-signal",
+      "kind": "role",
+      "tools": [
+        "mcu-minimum-system",
+        "swd-jtag",
+        "adc-reference"
+      ],
+      "language": "zh",
+      "color": "violet",
+      "path": "hardware-agency-agents-cn/数字-模拟-混合信号方向/STM32硬件工程师.md"
+    },
+    {
+      "id": "pcb-board-design-review-zh",
+      "name": "PCB与板级实现评审工程师",
+      "description": "用于投板前评审原理图、PCB、叠层、阻抗、回流路径、可制造性、可装配性、BOM、测试点和量产资料，按 Blocker、Major、Minor、Question 输出可复核的评审意见。",
+      "summary": "面向原理图、PCB、叠层、阻抗、制造资料和测试点的板级实现评审",
+      "domain": "pcb-board",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "pcb-layout",
+        "dfm",
+        "signal-integrity"
+      ],
+      "language": "zh",
+      "color": "blue",
+      "path": "hardware-design-review-validation/cn/PCB与板级实现评审工程师.md"
+    },
+    {
+      "id": "dfa-engineer-zh",
+      "name": "DFA工程师",
+      "description": "用于器件间距、焊接方向、钢网开口、可返修性、SMT/DIP 装配约束、连锡虚焊风险、装配评审和 DFA 整改建议输出。",
+      "summary": "可装配性设计优化，关注焊接风险、器件间距、装配方向与返修性",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "dfa",
+        "assembly-process",
+        "footprint-check"
+      ],
+      "language": "zh",
+      "color": "yellow",
+      "path": "hardware-agency-agents-cn/PCB 与板级实现方向/DFA工程师.md"
+    },
+    {
+      "id": "dfm-engineer-zh",
+      "name": "DFM工程师",
+      "description": "用于最小线宽线距、过孔工艺、拼板、阻焊桥、Gerber 制造数据、生产异常预防、DFM 评审和制造风险清单输出。",
+      "summary": "可制造性审查与制造规则分析，覆盖工艺边界与投板数据检查",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "dfm",
+        "fabrication-notes",
+        "panelization"
+      ],
+      "language": "zh",
+      "color": "amber",
+      "path": "hardware-agency-agents-cn/PCB 与板级实现方向/DFM工程师.md"
+    },
+    {
+      "id": "hardware-process-engineer-zh",
+      "name": "硬件工艺工程师",
+      "description": "用于 SMT、DIP、回流焊、波峰焊、炉温曲线、工艺窗口、焊接缺陷、试产导入、工艺评审和制造改进建议输出。",
+      "summary": "SMT/DIP、焊接工艺、制造导入与失效协同",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "smt-process",
+        "assembly-process",
+        "dfm"
+      ],
+      "language": "zh",
+      "color": "brown",
+      "path": "hardware-agency-agents-cn/PCB 与板级实现方向/硬件工艺工程师.md"
+    },
+    {
+      "id": "high-speed-pcb-engineer-zh",
+      "name": "高速PCB工程师",
+      "description": "用于 DDR、PCIe、USB、SerDes、差分对、等长、阻抗、参考平面、过孔优化、高速链路评审和布线约束输出。",
+      "summary": "高速板卡设计、差分等长、阻抗与串扰控制",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "pcb-layout",
+        "impedance-control",
+        "length-matching",
+        "signal-integrity"
+      ],
+      "language": "zh",
+      "color": "indigo",
+      "path": "hardware-agency-agents-cn/PCB 与板级实现方向/高速PCB工程师.md"
+    },
+    {
+      "id": "pcb-footprint-library-engineer-zh",
+      "name": "PCB封装库工程师",
+      "description": "用于 IPC 焊盘、封装命名、3D 模型、丝印标识、异形封装、封装尺寸错误、库审核和封装检查清单输出。",
+      "summary": "器件封装库、焊盘规则、3D 模型与标准化命名体系建设",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "footprint-library",
+        "padstack",
+        "datasheet-review"
+      ],
+      "language": "zh",
+      "color": "green",
+      "path": "hardware-agency-agents-cn/PCB 与板级实现方向/PCB封装库工程师.md"
+    },
+    {
+      "id": "pcb-hardware-engineer-zh",
+      "name": "PCB硬件工程师",
+      "description": "用于原理图落板、器件约束、布局布线、电源完整性、信号完整性、EMC/ESD、DFM/DFT、板级评审和生产资料输出。",
+      "summary": "从原理图到 PCB 落地的板级实现总角色，兼顾 SI、PI、EMC、DFM 与资料输出",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "schematic-capture",
+        "pcb-layout",
+        "signal-integrity",
+        "power-integrity",
+        "dfm"
+      ],
+      "language": "zh",
+      "color": "teal",
+      "path": "hardware-agency-agents-cn/PCB 与板级实现方向/PCB硬件工程师.md"
+    },
+    {
+      "id": "pcb-layout-engineer-zh",
+      "name": "PCB Layout工程师",
+      "description": "用于器件布局、走线规划、层叠设计、阻抗控制、差分线、等长、过孔、回流路径、电源地平面、Layout 评审和修改建议输出。",
+      "summary": "布局布线设计与约束管理，强调层叠、阻抗、过孔与回流路径",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "pcb-layout",
+        "stackup",
+        "impedance-control"
+      ],
+      "language": "zh",
+      "color": "cyan",
+      "path": "hardware-agency-agents-cn/PCB 与板级实现方向/PCB Layout工程师.md"
+    },
+    {
+      "id": "rf-hardware-engineer-zh",
+      "name": "射频硬件工程师",
+      "description": "用于匹配网络、天线接口、PA/LNA、S 参数、驻波、增益、噪声系数、射频调试、链路问题分析和修改建议输出。",
+      "summary": "RF 前端、阻抗匹配、天线协同与射频调试",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "rf-matching",
+        "vna",
+        "spectrum-analyzer"
+      ],
+      "language": "zh",
+      "color": "magenta",
+      "path": "hardware-agency-agents-cn/PCB 与板级实现方向/射频硬件工程师.md"
+    },
+    {
+      "id": "si-pi-engineer-zh",
+      "name": "SI/PI工程师",
+      "description": "用于高速接口、反射、串扰、阻抗不连续、差分通道、地弹、电源噪声、去耦网络、PDN、SI/PI 风险定位和整改约束输出。",
+      "summary": "信号完整性与电源完整性建模、仿真、定位与整改",
+      "domain": "pcb-board",
+      "kind": "role",
+      "tools": [
+        "signal-integrity",
+        "power-integrity",
+        "field-solver"
+      ],
+      "language": "zh",
+      "color": "purple",
+      "path": "hardware-agency-agents-cn/PCB 与板级实现方向/SIPI工程师.md"
+    },
+    {
+      "id": "power-design-review-zh",
+      "name": "电源与功率电子评审工程师",
+      "description": "用于评审 AC/DC、DC/DC、LDO、电源树、功率器件、磁件、环路补偿、纹波、瞬态、保护、热设计、EMI 和功率 PCB 布局。",
+      "summary": "面向电源树、功率级、环路、纹波、瞬态、保护、热和 EMI 的评审",
+      "domain": "power",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "power-tree",
+        "loop-compensation",
+        "thermal-design"
+      ],
+      "language": "zh",
+      "color": "orange",
+      "path": "hardware-design-review-validation/cn/电源与功率电子评审工程师.md"
+    },
+    {
+      "id": "bms-hardware-engineer-zh",
+      "name": "BMS硬件工程师",
+      "description": "用于电芯采样、均衡、MOS 保护、隔离通信、高压检测、温度采样、充放电异常、原理图评审和验证建议输出。",
+      "summary": "电芯采样、均衡、保护、高压安全与隔离通信",
+      "domain": "power",
+      "kind": "role",
+      "tools": [
+        "bms-sensing",
+        "cell-balancing",
+        "isolation"
+      ],
+      "language": "zh",
+      "color": "green",
+      "path": "hardware-agency-agents-cn/电源与功率电子方向/BMS硬件工程师.md"
+    },
+    {
+      "id": "energy-storage-hardware-engineer-zh",
+      "name": "储能硬件工程师",
+      "description": "用于 BMS、PCS 接口、母线采样、高压安全、预充、接触器、热管理、储能柜评审和测试建议输出。",
+      "summary": "储能系统模块、电源转换、保护与热管理",
+      "domain": "power",
+      "kind": "role",
+      "tools": [
+        "power-conversion",
+        "thermal-design",
+        "protection-circuit"
+      ],
+      "language": "zh",
+      "color": "purple",
+      "path": "hardware-agency-agents-cn/电源与功率电子方向/储能硬件工程师.md"
+    },
+    {
+      "id": "motor-drive-hardware-engineer-zh",
+      "name": "电机驱动硬件工程师",
+      "description": "用于半桥、全桥、栅极驱动、电流采样、母线电压、过流保护、死区、启动异常、调试步骤和整改建议输出。",
+      "summary": "半桥/全桥、电流采样、保护与电机驱动控制板基础",
+      "domain": "power",
+      "kind": "role",
+      "tools": [
+        "inverter-bridge",
+        "current-sense",
+        "gate-drive"
+      ],
+      "language": "zh",
+      "color": "blue",
+      "path": "hardware-agency-agents-cn/电源与功率电子方向/电机驱动硬件工程师.md"
+    },
+    {
+      "id": "power-electronics-engineer-zh",
+      "name": "功率电子工程师",
+      "description": "用于 Buck、Boost、PFC、逆变、磁件、驱动、开关损耗、热设计、环路评审和验证方法输出。",
+      "summary": "中高功率变换、驱动、磁件、热设计与损耗分析",
+      "domain": "power",
+      "kind": "role",
+      "tools": [
+        "gate-drive",
+        "magnetics",
+        "loss-analysis",
+        "thermal-design"
+      ],
+      "language": "zh",
+      "color": "red",
+      "path": "hardware-agency-agents-cn/电源与功率电子方向/功率电子工程师.md"
+    },
+    {
+      "id": "power-hardware-engineer-zh",
+      "name": "电源硬件工程师",
+      "description": "用于 AC/DC、DC/DC、LDO、电源树、环路稳定性、纹波、瞬态、温升、EMI、保护电路、器件选型、原理图审查、PCB 电源布局约束和测试验证输出。",
+      "summary": "AC/DC、DC/DC、LDO、电源树、补偿、热与保护设计",
+      "domain": "power",
+      "kind": "role",
+      "tools": [
+        "power-tree",
+        "loop-compensation",
+        "electronic-load"
+      ],
+      "language": "zh",
+      "color": "orange",
+      "path": "hardware-agency-agents-cn/电源与功率电子方向/电源硬件工程师.md"
+    },
+    {
+      "id": "reliability-emc-safety-design-review-zh",
+      "name": "可靠性EMC安规评审工程师",
+      "description": "用于评审降额、温升、ESD、浪涌、EMI、绝缘、爬电距离、电气安全、环境应力、认证资料和整改闭环，按风险等级输出可执行评审意见。",
+      "summary": "面向降额、温升、ESD、浪涌、EMC、安规距离和认证资料的风险评审",
+      "domain": "reliability-emc-safety",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "derating",
+        "emc-scan",
+        "safety-spacing"
+      ],
+      "language": "zh",
+      "color": "red",
+      "path": "hardware-design-review-validation/cn/可靠性EMC安规评审工程师.md"
+    },
+    {
+      "id": "certification-engineer-zh",
+      "name": "认证工程师（CE/FCC/UL等）",
+      "description": "用于 CE、FCC、UL、EMC、安规、无线法规、资料清单、测试整改、认证路径评估和送测交付物输出。",
+      "summary": "法规认证资料、测试配合与整改闭环",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "certification-dossier",
+        "emc-scan",
+        "safety-report"
+      ],
+      "language": "zh",
+      "color": "violet",
+      "path": "hardware-agency-agents-cn/可靠性 EMC 安规方向/认证工程师（CE_FCC_UL等）.md"
+    },
+    {
+      "id": "emc-hardware-engineer-zh",
+      "name": "EMC硬件工程师",
+      "description": "用于 EMI、EMS、传导发射、辐射发射、静电、浪涌、滤波、接地、屏蔽、接口防护、板级和系统级 EMC 风险分析、整改建议和验证计划输出。",
+      "summary": "EMC 设计、整改与板级到系统级闭环",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "emc-scan",
+        "spectrum-analyzer",
+        "esd-test"
+      ],
+      "language": "zh",
+      "color": "indigo",
+      "path": "hardware-agency-agents-cn/可靠性 EMC 安规方向/EMC硬件工程师.md"
+    },
+    {
+      "id": "emi-remediation-engineer-zh",
+      "name": "EMI整改工程师",
+      "description": "用于传导超标、辐射超标、开关电源噪声、时钟谐波、高频回路、线缆辐射、屏蔽、滤波、接地路径、整改实验设计、频谱分析和闭环验证输出。",
+      "summary": "EMI 问题定位、干扰源分析与高频整改落地",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "emi-debug",
+        "spectrum-analyzer",
+        "near-field-probe"
+      ],
+      "language": "zh",
+      "color": "red",
+      "path": "hardware-agency-agents-cn/可靠性 EMC 安规方向/EMI整改工程师.md"
+    },
+    {
+      "id": "environmental-test-engineer-zh",
+      "name": "环境测试工程师",
+      "description": "用于高低温、温循、振动、跌落、老化、湿热、应力筛选、失效复现、测试记录、问题归档和验证结论输出。",
+      "summary": "高低温、振动、跌落、老化等环境应力测试",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "environmental-chamber",
+        "vibration-test",
+        "thermal-chamber"
+      ],
+      "language": "zh",
+      "color": "teal",
+      "path": "hardware-agency-agents-cn/可靠性 EMC 安规方向/环境测试工程师.md"
+    },
+    {
+      "id": "esd-protection-engineer-zh",
+      "name": "ESD防护工程师",
+      "description": "用于 TVS 选型、接口泄放路径、接地回路、空气放电、接触放电、端口损伤、布局评审、防护方案和验证建议输出。",
+      "summary": "静电防护方案、TVS 选型、泄放路径与接口保护",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "esd-test",
+        "tvs-selection",
+        "interface-protection"
+      ],
+      "language": "zh",
+      "color": "cyan",
+      "path": "hardware-agency-agents-cn/可靠性 EMC 安规方向/ESD防护工程师.md"
+    },
+    {
+      "id": "failure-analysis-engineer-zh",
+      "name": "失效分析工程师",
+      "description": "用于烧毁、短路、开路、间歇故障、焊接缺陷、器件失效模式、复现路径、切片解剖、证据链分析和根因结论输出。",
+      "summary": "故障复现、根因定位、器件失效与应力分析",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "failure-analysis",
+        "microscope",
+        "decapsulation"
+      ],
+      "language": "zh",
+      "color": "brown",
+      "path": "hardware-agency-agents-cn/可靠性 EMC 安规方向/失效分析工程师.md"
+    },
+    {
+      "id": "hardware-reliability-engineer-zh",
+      "name": "硬件可靠性工程师",
+      "description": "用于降额设计、温升、应力分析、MTBF、寿命模型、环境适应性、早期失效、可靠性评审和验证计划输出。",
+      "summary": "降额、寿命、温升、应力与 MTBF 相关设计方法",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "derating",
+        "fmea",
+        "mtbf"
+      ],
+      "language": "zh",
+      "color": "green",
+      "path": "hardware-agency-agents-cn/可靠性 EMC 安规方向/硬件可靠性工程师.md"
+    },
+    {
+      "id": "safety-compliance-engineer-zh",
+      "name": "安规工程师",
+      "description": "用于爬电距离、电气间隙、绝缘等级、漏电流、接地保护、耐压、单故障、安规评审、整改建议和测试检查清单输出。",
+      "summary": "电气安全设计、绝缘边界、风险评估与认证准备",
+      "domain": "reliability-emc-safety",
+      "kind": "role",
+      "tools": [
+        "safety-spacing",
+        "hipot",
+        "insulation-coordination"
+      ],
+      "language": "zh",
+      "color": "blue",
+      "path": "hardware-agency-agents-cn/可靠性 EMC 安规方向/安规工程师.md"
+    },
+    {
+      "id": "test-validation-review-zh",
+      "name": "测试与验证评审工程师",
+      "description": "用于评审 EVT、DVT、PVT、测试计划、测试覆盖、样本量、仪器配置、治具、数据记录、问题闭环、准入准出和量产测试策略。",
+      "summary": "面向 EVT、DVT、PVT、测试覆盖、样本量、数据记录和问题闭环的评审",
+      "domain": "test-validation",
+      "kind": "review",
+      "tools": [
+        "design-review",
+        "evt-dvt",
+        "test-plan",
+        "validation-plan"
+      ],
+      "language": "zh",
+      "color": "teal",
+      "path": "hardware-design-review-validation/cn/测试与验证评审工程师.md"
+    },
+    {
+      "id": "automated-test-hardware-engineer-zh",
+      "name": "自动化测试硬件工程师",
+      "description": "用于治具、切换矩阵、接口控制、脚本联动、产测链路、数据采集、重复性问题、平台评审和测试方案输出。",
+      "summary": "测试治具、接口控制、产测链路与自动化平台",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "fixture-design",
+        "instrument-control",
+        "boundary-scan"
+      ],
+      "language": "zh",
+      "color": "green",
+      "path": "hardware-agency-agents-cn/测试与验证方向/自动化测试硬件工程师.md"
+    },
+    {
+      "id": "board-level-debug-engineer-zh",
+      "name": "板级调试工程师",
+      "description": "用于电源时序、复位、时钟、下载接口、通信异常、短路、过流、启动失败、波形测量、故障隔离、根因分析和复测建议输出。",
+      "summary": "上电、时钟、复位、接口与故障调试定位",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "oscilloscope",
+        "logic-analyzer",
+        "power-on-debug"
+      ],
+      "language": "zh",
+      "color": "orange",
+      "path": "hardware-agency-agents-cn/测试与验证方向/板级调试工程师.md"
+    },
+    {
+      "id": "evt-dvt-engineer-zh",
+      "name": "EVT/DVT工程师",
+      "description": "用于样机验证、阶段准入、缺陷跟踪、边界条件、回归测试、设计成熟度评估、风险清单和放行建议输出。",
+      "summary": "样机阶段测试、风险识别与设计成熟度判断",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "evt-dvt",
+        "test-plan",
+        "issue-tracker"
+      ],
+      "language": "zh",
+      "color": "violet",
+      "path": "hardware-agency-agents-cn/测试与验证方向/EVT_DVT工程师.md"
+    },
+    {
+      "id": "hardware-test-engineer-zh",
+      "name": "硬件测试工程师",
+      "description": "用于功能测试、性能测试、边界条件、稳定性、异常复现、测量判定、测试用例、问题记录和测试结论输出。",
+      "summary": "功能、性能、边界与稳定性测试执行",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "test-plan",
+        "oscilloscope",
+        "boundary-test"
+      ],
+      "language": "zh",
+      "color": "blue",
+      "path": "hardware-agency-agents-cn/测试与验证方向/硬件测试工程师.md"
+    },
+    {
+      "id": "hardware-validation-engineer-zh",
+      "name": "硬件验证工程师",
+      "description": "用于 EVT、DVT、PVT、样机测试、需求覆盖、测试用例、边界条件、问题跟踪、风险收敛、准入判断、验证报告和设计成熟度评估输出。",
+      "summary": "验证计划、缺陷闭环、EVT/DVT/PVT 准入判断",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "validation-plan",
+        "evt-dvt",
+        "issue-tracker"
+      ],
+      "language": "zh",
+      "color": "indigo",
+      "path": "hardware-agency-agents-cn/测试与验证方向/硬件验证工程师.md"
+    },
+    {
+      "id": "lab-test-engineer-zh",
+      "name": "实验室测试工程师",
+      "description": "用于示波器、电源、电子负载、频谱仪、工况搭建、测试记录、异常复测、结果归档和测试报告输出。",
+      "summary": "仪器使用、测试执行、数据记录与重复性控制",
+      "domain": "test-validation",
+      "kind": "role",
+      "tools": [
+        "oscilloscope",
+        "lab-notebook",
+        "instrument-control"
+      ],
+      "language": "zh",
+      "color": "teal",
+      "path": "hardware-agency-agents-cn/测试与验证方向/实验室测试工程师.md"
+    }
+  ]
+}

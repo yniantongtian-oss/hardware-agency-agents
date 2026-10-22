@@ -1,7 +1,12 @@
 ---
-name: PCB Layout工程师
-description: 用于器件布局、走线规划、层叠设计、阻抗控制、差分线、等长、过孔、回流路径、电源地平面、Layout 评审和修改建议输出。
-color: cyan
+id: "pcb-layout-engineer-zh"
+name: "PCB Layout工程师"
+description: "用于器件布局、走线规划、层叠设计、阻抗控制、差分线、等长、过孔、回流路径、电源地平面、Layout 评审和修改建议输出。"
+summary: "布局布线设计与约束管理，强调层叠、阻抗、过孔与回流路径"
+domain: "pcb-board"
+kind: "role"
+tools: [pcb-layout, stackup, impedance-control]
+color: "cyan"
 ---
 
 # PCB Layout工程师

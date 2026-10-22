@@ -1,7 +1,12 @@
 ---
-name: CPLD工程师
-description: 用于 IO 电平、时序控制、胶合逻辑、地址译码、配置方式、接口异常、原理图评审和调试建议输出。
-color: blue
+id: "cpld-engineer-zh"
+name: "CPLD工程师"
+description: "用于 IO 电平、时序控制、胶合逻辑、地址译码、配置方式、接口异常、原理图评审和调试建议输出。"
+summary: "简单逻辑控制、接口转换、IO 电平与配置方式"
+domain: "chip-platform"
+kind: "role"
+tools: [programmable-logic, io-level, timing-analysis]
+color: "blue"
 ---
 
 # CPLD工程师

@@ -3,7 +3,7 @@
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Skills](https://img.shields.io/badge/skills-55-blue)
+![Agents](https://img.shields.io/badge/agents-110-blue)
 ![Domains](https://img.shields.io/badge/domains-8-orange)
 ![Language](https://img.shields.io/badge/language-bilingual-purple)
 
@@ -32,24 +32,28 @@
 
 ## ⚡ 快速开始
 
-1. 为你的 Agent 安装 skills：
+1. 克隆仓库：
 
-   Codex：
-
-   ```zsh
-   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- codex
+   ```bash
+   git clone https://github.com/yniantongtian-oss/hardware-agency-agents.git
+   cd hardware-agency-agents
    ```
 
-   Claude Code：
+2. 用 `install.sh` 导出到实际使用的宿主。脚本只读取本仓库，并且只写入 `--dest`：
 
-   ```zsh
-   curl -fsSL https://raw.githubusercontent.com/Seahan1/hardware-agency-agents/main/install.sh | zsh -s -- claude-code
+   ```bash
+   ./install.sh claude-code --lang zh --dest "$HOME"   # $HOME/.claude/agents
+   ./install.sh cursor --lang zh --dest .              # ./.cursor/rules
+   ./install.sh codex --lang zh --dest .               # ./AGENTS.md 与 ./agents/*/AGENTS.md
+   ./install.sh all --lang all --dest dist/agents      # 中英文，三种格式
    ```
 
-2. 先从下面索引里找到最接近你任务的 skill。
-3. 把这个 skill 当作主工程角色来使用。
-4. 如果问题跨领域，再补充 1 到 2 个相邻 skill 联合判断。
-5. 用 skill 内容来组织评审意见、设计约束、调试假设和验证计划。
+   Claude Code 得到 `name`、`description` 和宿主工具 `Read, Grep, Glob`。frontmatter 里的工程工具写进提示词，不会当成宿主工具名。Cursor 规则是按描述调用的（`alwaysApply: false`）。Codex 得到一份索引 `AGENTS.md`，以及每个 agent 一份角色文件。
+
+3. 先从下面生成的索引里找到最接近你任务的 skill。
+4. 把这个 skill 当作主工程角色来使用。
+5. 如果问题跨领域，再补充 1 到 2 个相邻 skill 联合判断。
+6. 用 skill 内容来组织评审意见、设计约束、调试假设和验证计划。
 
 推荐起点：
 
@@ -69,8 +73,9 @@
 
 ## 📦 仓库概览
 
-- 47 个硬件角色 skill，加 8 个硬件设计评审 skill，各有中英文版本，共 110 份文档
-- 8 个专业方向
+- 110 份 agent 提示词：47 个硬件岗位加 8 个设计评审岗位，各有中英文版本
+- 8 个专业方向，每份 frontmatter 都包含 `domain`、`kind` 和 `tools`
+- 机器可读目录在 [`catalog/agents.json`](./catalog/agents.json)，并生成到下面的索引
 - 覆盖 PCB、嵌入式硬件、电源、EMC/安规、验证测试、SoC/FPGA、通信接口等核心领域
 - 适合用于方案评审、原理图检查、PCB 约束梳理、硬件设计评审、调试定位、验证策划、量产导入与跨团队协作
 
@@ -112,9 +117,14 @@ hardware-agency-agents/
 │   ├── 电源与功率电子方向/
 │   ├── 芯片平台与底层板级协同方向/
 │   └── 通信与接口方向/
-└── hardware-design-review-validation/
-    ├── en/
-    └── cn/
+├── hardware-design-review-validation/
+│   ├── en/
+│   └── cn/
+├── schema/agent.schema.json
+├── catalog/agents.json
+├── evals/
+├── scripts/
+└── install.sh
 ```
 
 说明：
@@ -127,121 +137,106 @@ hardware-agency-agents/
 
 ## 🧰 Skill Index
 
-### PCB 与板级实现方向（9）
+<!-- catalog:generated:start -->
+本段由 `scripts/generate_catalog.py` 根据 frontmatter 生成，请勿手工修改。
 
-| Skill | 定位 |
-| --- | --- |
-| [DFA工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/DFA%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 可装配性设计优化，关注焊接风险、器件间距、装配方向与返修性 |
-| [DFM工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/DFM%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 可制造性审查与制造规则分析，覆盖工艺边界与投板数据检查 |
-| [PCB Layout工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%20Layout%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 布局布线设计与约束管理，强调层叠、阻抗、过孔与回流路径 |
-| [PCB封装库工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%E5%B0%81%E8%A3%85%E5%BA%93%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 器件封装库、焊盘规则、3D 模型与标准化命名体系建设 |
-| [PCB硬件工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 从原理图到 PCB 落地的板级实现总角色，兼顾 SI、PI、EMC、DFM 与资料输出 |
-| [SI/PI工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/SIPI%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 信号完整性与电源完整性建模、仿真、定位与整改 |
-| [射频硬件工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E5%B0%84%E9%A2%91%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | RF 前端、阻抗匹配、天线协同与射频调试 |
-| [硬件工艺工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E5%B7%A5%E8%89%BA%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | SMT/DIP、焊接工艺、制造导入与失效协同 |
-| [高速PCB工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E9%AB%98%E9%80%9FPCB%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高速板卡设计、差分等长、阻抗与串扰控制 |
+55 个中文 agent（47 个岗位角色、8 个设计评审），覆盖 8 个方向。机器可读目录见 [`catalog/agents.json`](./catalog/agents.json)。英文索引见 [`README.md`](./README.md)。
 
-### 可靠性 EMC 安规方向（8）
+### PCB 与板级实现方向（`pcb-board`）— 9 个角色，1 个设计评审
 
-| Skill | 定位 |
-| --- | --- |
-| [EMC硬件工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/EMC%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | EMC 设计、整改与板级到系统级闭环 |
-| [EMI整改工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/EMI%E6%95%B4%E6%94%B9%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | EMI 问题定位、干扰源分析与高频整改落地 |
-| [ESD防护工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/ESD%E9%98%B2%E6%8A%A4%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 静电防护方案、TVS 选型、泄放路径与接口保护 |
-| [失效分析工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E5%A4%B1%E6%95%88%E5%88%86%E6%9E%90%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 故障复现、根因定位、器件失效与应力分析 |
-| [安规工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E5%AE%89%E8%A7%84%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 电气安全设计、绝缘边界、风险评估与认证准备 |
-| [环境测试工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E7%8E%AF%E5%A2%83%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高低温、振动、跌落、老化等环境应力测试 |
-| [硬件可靠性工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 降额、寿命、温升、应力与 MTBF 相关设计方法 |
-| [认证工程师（CE/FCC/UL等）](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E8%AE%A4%E8%AF%81%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88CE_FCC_UL%E7%AD%89%EF%BC%89.md) | 法规认证资料、测试配合与整改闭环 |
+| Agent | 工具 | 摘要 |
+| --- | --- | --- |
+| [DFA工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/DFA%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `dfa`, `assembly-process`, `footprint-check` | 可装配性设计优化，关注焊接风险、器件间距、装配方向与返修性 |
+| [DFM工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/DFM%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `dfm`, `fabrication-notes`, `panelization` | 可制造性审查与制造规则分析，覆盖工艺边界与投板数据检查 |
+| [硬件工艺工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E5%B7%A5%E8%89%BA%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `smt-process`, `assembly-process`, `dfm` | SMT/DIP、焊接工艺、制造导入与失效协同 |
+| [高速PCB工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E9%AB%98%E9%80%9FPCB%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `pcb-layout`, `impedance-control`, `length-matching`, `signal-integrity` | 高速板卡设计、差分等长、阻抗与串扰控制 |
+| [PCB封装库工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%E5%B0%81%E8%A3%85%E5%BA%93%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `footprint-library`, `padstack`, `datasheet-review` | 器件封装库、焊盘规则、3D 模型与标准化命名体系建设 |
+| [PCB硬件工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `schematic-capture`, `pcb-layout`, `signal-integrity`, `power-integrity`, `dfm` | 从原理图到 PCB 落地的板级实现总角色，兼顾 SI、PI、EMC、DFM 与资料输出 |
+| [PCB Layout工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/PCB%20Layout%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `pcb-layout`, `stackup`, `impedance-control` | 布局布线设计与约束管理，强调层叠、阻抗、过孔与回流路径 |
+| [射频硬件工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/%E5%B0%84%E9%A2%91%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `rf-matching`, `vna`, `spectrum-analyzer` | RF 前端、阻抗匹配、天线协同与射频调试 |
+| [SI/PI工程师](./hardware-agency-agents-cn/PCB%20%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%90%91/SIPI%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `signal-integrity`, `power-integrity`, `field-solver` | 信号完整性与电源完整性建模、仿真、定位与整改 |
+| [PCB与板级实现评审工程师 (设计评审)](./hardware-design-review-validation/cn/PCB%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `design-review`, `pcb-layout`, `dfm`, `signal-integrity` | 面向原理图、PCB、叠层、阻抗、制造资料和测试点的板级实现评审 |
 
-### 嵌入式硬件方向（7）
+### 可靠性、EMC 与安规（`reliability-emc-safety`）— 8 个角色，1 个设计评审
 
-| Skill | 定位 |
-| --- | --- |
-| [MCU硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/MCU%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | MCU 最小系统、复位时钟、下载接口与板级调试 |
-| [单片机硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%8D%95%E7%89%87%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 单片机控制类外围设计、总线、电平与保护 |
-| [嵌入式硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | MCU/MPU 板级系统开发、接口、电源与联调 |
-| [嵌入式系统硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高复杂度嵌入式平台、DDR、Flash、总线与时序设计 |
-| [工控硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B7%A5%E6%8E%A7%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 工业现场抗干扰、隔离、浪涌、防雷与宽温设计 |
-| [控制板硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E6%8E%A7%E5%88%B6%E6%9D%BF%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 控制主板与功能板设计、驱动保护与联调 |
-| [自动化控制硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8E%A7%E5%88%B6%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 自动化设备控制硬件、IO、继电器、工业总线与驱动采集 |
+| Agent | 工具 | 摘要 |
+| --- | --- | --- |
+| [认证工程师（CE/FCC/UL等）](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E8%AE%A4%E8%AF%81%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88CE_FCC_UL%E7%AD%89%EF%BC%89.md) | `certification-dossier`, `emc-scan`, `safety-report` | 法规认证资料、测试配合与整改闭环 |
+| [EMC硬件工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/EMC%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `emc-scan`, `spectrum-analyzer`, `esd-test` | EMC 设计、整改与板级到系统级闭环 |
+| [EMI整改工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/EMI%E6%95%B4%E6%94%B9%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `emi-debug`, `spectrum-analyzer`, `near-field-probe` | EMI 问题定位、干扰源分析与高频整改落地 |
+| [环境测试工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E7%8E%AF%E5%A2%83%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `environmental-chamber`, `vibration-test`, `thermal-chamber` | 高低温、振动、跌落、老化等环境应力测试 |
+| [ESD防护工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/ESD%E9%98%B2%E6%8A%A4%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `esd-test`, `tvs-selection`, `interface-protection` | 静电防护方案、TVS 选型、泄放路径与接口保护 |
+| [失效分析工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E5%A4%B1%E6%95%88%E5%88%86%E6%9E%90%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `failure-analysis`, `microscope`, `decapsulation` | 故障复现、根因定位、器件失效与应力分析 |
+| [硬件可靠性工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E5%8F%AF%E9%9D%A0%E6%80%A7%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `derating`, `fmea`, `mtbf` | 降额、寿命、温升、应力与 MTBF 相关设计方法 |
+| [安规工程师](./hardware-agency-agents-cn/%E5%8F%AF%E9%9D%A0%E6%80%A7%20EMC%20%E5%AE%89%E8%A7%84%E6%96%B9%E5%90%91/%E5%AE%89%E8%A7%84%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `safety-spacing`, `hipot`, `insulation-coordination` | 电气安全设计、绝缘边界、风险评估与认证准备 |
+| [可靠性EMC安规评审工程师 (设计评审)](./hardware-design-review-validation/cn/%E5%8F%AF%E9%9D%A0%E6%80%A7EMC%E5%AE%89%E8%A7%84%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `design-review`, `derating`, `emc-scan`, `safety-spacing` | 面向降额、温升、ESD、浪涌、EMC、安规距离和认证资料的风险评审 |
 
-### 数字 / 模拟 / 混合信号方向（7）
+### 嵌入式硬件方向（`embedded`）— 7 个角色，1 个设计评审
 
-| Skill | 定位 |
-| --- | --- |
-| [STM32硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/STM32%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | STM32 最小系统、Boot、SWD、ADC 参考与外围设计 |
-| [低功耗硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BD%8E%E5%8A%9F%E8%80%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 电池供电系统的功耗建模、休眠唤醒与续航闭环 |
-| [信号链硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BF%A1%E5%8F%B7%E9%93%BE%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 传感器到处理器的信号调理、滤波、隔离与误差链分析 |
-| [数字硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E5%AD%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 数字逻辑、电路时序、总线协议与板级实现 |
-| [数模混合硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E6%A8%A1%E6%B7%B7%E5%90%88%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 模数混合系统、隔离分区、采样同步与串扰控制 |
-| [模拟硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%A8%A1%E6%8B%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 运放、滤波、采样调理、噪声与稳定性分析 |
-| [高速数字电路工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E9%AB%98%E9%80%9F%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 高速接口、时序裕量、参考平面与板级调试 |
+| Agent | 工具 | 摘要 |
+| --- | --- | --- |
+| [自动化控制硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%8E%A7%E5%88%B6%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `io-module`, `industrial-bus`, `relay-drive` | 自动化设备控制硬件、IO、继电器、工业总线与驱动采集 |
+| [控制板硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E6%8E%A7%E5%88%B6%E6%9D%BF%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `schematic-capture`, `protection-circuit`, `power-tree` | 控制主板与功能板设计、驱动保护与联调 |
+| [嵌入式硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `schematic-capture`, `peripheral-interface`, `power-tree` | MCU/MPU 板级系统开发、接口、电源与联调 |
+| [嵌入式系统硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `ddr-bringup`, `flash-boot`, `timing-analysis` | 高复杂度嵌入式平台、DDR、Flash、总线与时序设计 |
+| [工控硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%B7%A5%E6%8E%A7%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `isolation`, `surge-protection`, `wide-temperature` | 工业现场抗干扰、隔离、浪涌、防雷与宽温设计 |
+| [MCU硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/MCU%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `mcu-minimum-system`, `clock-reset`, `swd-jtag` | MCU 最小系统、复位时钟、下载接口与板级调试 |
+| [单片机硬件工程师](./hardware-agency-agents-cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E6%96%B9%E5%90%91/%E5%8D%95%E7%89%87%E6%9C%BA%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `mcu-minimum-system`, `logic-level`, `protection-circuit` | 单片机控制类外围设计、总线、电平与保护 |
+| [嵌入式硬件评审工程师 (设计评审)](./hardware-design-review-validation/cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `design-review`, `mcu-minimum-system`, `clock-reset`, `boot-config` | 面向 MCU/MPU 最小系统、复位时钟、启动配置、接口和调试入口的评审 |
 
-### 测试与验证方向（6）
+### 数字、模拟与混合信号方向（`mixed-signal`）— 7 个角色，1 个设计评审
 
-| Skill | 定位 |
-| --- | --- |
-| [EVT/DVT工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/EVT_DVT%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 样机阶段测试、风险识别与设计成熟度判断 |
-| [实验室测试工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 仪器使用、测试执行、数据记录与重复性控制 |
-| [板级调试工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E6%9D%BF%E7%BA%A7%E8%B0%83%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 上电、时钟、复位、接口与故障调试定位 |
-| [硬件测试工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 功能、性能、边界与稳定性测试执行 |
-| [硬件验证工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E9%AA%8C%E8%AF%81%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 验证计划、缺陷闭环、EVT/DVT/PVT 准入判断 |
-| [自动化测试硬件工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 测试治具、接口控制、产测链路与自动化平台 |
+| Agent | 工具 | 摘要 |
+| --- | --- | --- |
+| [模拟硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%A8%A1%E6%8B%9F%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `analog-front-end`, `filter-design`, `noise-analysis` | 运放、滤波、采样调理、噪声与稳定性分析 |
+| [数字硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E5%AD%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `timing-analysis`, `logic-analyzer`, `schematic-capture` | 数字逻辑、电路时序、总线协议与板级实现 |
+| [高速数字电路工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E9%AB%98%E9%80%9F%E6%95%B0%E5%AD%97%E7%94%B5%E8%B7%AF%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `signal-integrity`, `timing-analysis`, `oscilloscope` | 高速接口、时序裕量、参考平面与板级调试 |
+| [低功耗硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BD%8E%E5%8A%9F%E8%80%97%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `power-budget`, `sleep-current`, `battery-profile` | 电池供电系统的功耗建模、休眠唤醒与续航闭环 |
+| [数模混合硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E6%95%B0%E6%A8%A1%E6%B7%B7%E5%90%88%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `analog-front-end`, `grounding`, `adc-reference` | 模数混合系统、隔离分区、采样同步与串扰控制 |
+| [信号链硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/%E4%BF%A1%E5%8F%B7%E9%93%BE%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `analog-front-end`, `filter-design`, `adc-reference` | 传感器到处理器的信号调理、滤波、隔离与误差链分析 |
+| [STM32硬件工程师](./hardware-agency-agents-cn/%E6%95%B0%E5%AD%97-%E6%A8%A1%E6%8B%9F-%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E6%96%B9%E5%90%91/STM32%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `mcu-minimum-system`, `swd-jtag`, `adc-reference` | STM32 最小系统、Boot、SWD、ADC 参考与外围设计 |
+| [数字模拟混合信号评审工程师 (设计评审)](./hardware-design-review-validation/cn/%E6%95%B0%E5%AD%97%E6%A8%A1%E6%8B%9F%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `design-review`, `signal-integrity`, `analog-front-end`, `adc-reference` | 面向高速数字、模拟链路、ADC/DAC、参考源、噪声和串扰的评审 |
 
-### 电源与功率电子方向（5）
+### 测试与验证方向（`test-validation`）— 6 个角色，1 个设计评审
 
-| Skill | 定位 |
-| --- | --- |
-| [BMS硬件工程师](./hardware-agency-agents-cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/BMS%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 电芯采样、均衡、保护、高压安全与隔离通信 |
-| [储能硬件工程师](./hardware-agency-agents-cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E5%82%A8%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 储能系统模块、电源转换、保护与热管理 |
-| [功率电子工程师](./hardware-agency-agents-cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 中高功率变换、驱动、磁件、热设计与损耗分析 |
-| [电机驱动硬件工程师](./hardware-agency-agents-cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E7%94%B5%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 半桥/全桥、电流采样、保护与电机驱动控制板基础 |
-| [电源硬件工程师](./hardware-agency-agents-cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E7%94%B5%E6%BA%90%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | AC/DC、DC/DC、LDO、电源树、补偿、热与保护设计 |
+| Agent | 工具 | 摘要 |
+| --- | --- | --- |
+| [自动化测试硬件工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `fixture-design`, `instrument-control`, `boundary-scan` | 测试治具、接口控制、产测链路与自动化平台 |
+| [板级调试工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E6%9D%BF%E7%BA%A7%E8%B0%83%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `oscilloscope`, `logic-analyzer`, `power-on-debug` | 上电、时钟、复位、接口与故障调试定位 |
+| [EVT/DVT工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/EVT_DVT%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `evt-dvt`, `test-plan`, `issue-tracker` | 样机阶段测试、风险识别与设计成熟度判断 |
+| [硬件测试工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `test-plan`, `oscilloscope`, `boundary-test` | 功能、性能、边界与稳定性测试执行 |
+| [硬件验证工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E7%A1%AC%E4%BB%B6%E9%AA%8C%E8%AF%81%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `validation-plan`, `evt-dvt`, `issue-tracker` | 验证计划、缺陷闭环、EVT/DVT/PVT 准入判断 |
+| [实验室测试工程师](./hardware-agency-agents-cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E6%96%B9%E5%90%91/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E6%B5%8B%E8%AF%95%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `oscilloscope`, `lab-notebook`, `instrument-control` | 仪器使用、测试执行、数据记录与重复性控制 |
+| [测试与验证评审工程师 (设计评审)](./hardware-design-review-validation/cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `design-review`, `evt-dvt`, `test-plan`, `validation-plan` | 面向 EVT、DVT、PVT、测试覆盖、样本量、数据记录和问题闭环的评审 |
 
-### 芯片平台与底层板级协同方向（4）
+### 电源与功率电子方向（`power`）— 5 个角色，1 个设计评审
 
-| Skill | 定位 |
-| --- | --- |
-| [CPLD工程师](./hardware-agency-agents-cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/CPLD%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 简单逻辑控制、接口转换、IO 电平与配置方式 |
-| [FPGA硬件工程师](./hardware-agency-agents-cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/FPGA%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | FPGA 供电、时钟、配置接口、多电压域与高速 IO |
-| [SoC硬件平台工程师](./hardware-agency-agents-cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/SoC%E7%A1%AC%E4%BB%B6%E5%B9%B3%E5%8F%B0%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | SoC/MPU 平台、DDR、电源时序、PMIC 与启动配置 |
-| [芯片应用工程师（FAE/AE偏硬件）](./hardware-agency-agents-cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/%E8%8A%AF%E7%89%87%E5%BA%94%E7%94%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88FAE_AE%E5%81%8F%E7%A1%AC%E4%BB%B6%EF%BC%89.md) | 芯片应用支持、参考设计落地与客户问题分析 |
+| Agent | 工具 | 摘要 |
+| --- | --- | --- |
+| [BMS硬件工程师](./hardware-agency-agents-cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/BMS%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `bms-sensing`, `cell-balancing`, `isolation` | 电芯采样、均衡、保护、高压安全与隔离通信 |
+| [储能硬件工程师](./hardware-agency-agents-cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E5%82%A8%E8%83%BD%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `power-conversion`, `thermal-design`, `protection-circuit` | 储能系统模块、电源转换、保护与热管理 |
+| [电机驱动硬件工程师](./hardware-agency-agents-cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E7%94%B5%E6%9C%BA%E9%A9%B1%E5%8A%A8%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `inverter-bridge`, `current-sense`, `gate-drive` | 半桥/全桥、电流采样、保护与电机驱动控制板基础 |
+| [功率电子工程师](./hardware-agency-agents-cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `gate-drive`, `magnetics`, `loss-analysis`, `thermal-design` | 中高功率变换、驱动、磁件、热设计与损耗分析 |
+| [电源硬件工程师](./hardware-agency-agents-cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E6%96%B9%E5%90%91/%E7%94%B5%E6%BA%90%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `power-tree`, `loop-compensation`, `electronic-load` | AC/DC、DC/DC、LDO、电源树、补偿、热与保护设计 |
+| [电源与功率电子评审工程师 (设计评审)](./hardware-design-review-validation/cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `design-review`, `power-tree`, `loop-compensation`, `thermal-design` | 面向电源树、功率级、环路、纹波、瞬态、保护、热和 EMI 的评审 |
 
-### 通信与接口方向（1）
+### 芯片平台与底层板级协同方向（`chip-platform`）— 4 个角色，1 个设计评审
 
-| Skill | 定位 |
-| --- | --- |
-| [通信硬件工程师](./hardware-agency-agents-cn/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%96%B9%E5%90%91/%E9%80%9A%E4%BF%A1%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 通信板卡、高速接口、链路调试、传输线与 EMC 协同设计 |
+| Agent | 工具 | 摘要 |
+| --- | --- | --- |
+| [芯片应用工程师（FAE/AE偏硬件）](./hardware-agency-agents-cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/%E8%8A%AF%E7%89%87%E5%BA%94%E7%94%A8%E5%B7%A5%E7%A8%8B%E5%B8%88%EF%BC%88FAE_AE%E5%81%8F%E7%A1%AC%E4%BB%B6%EF%BC%89.md) | `datasheet-review`, `reference-design`, `schematic-capture` | 芯片应用支持、参考设计落地与客户问题分析 |
+| [CPLD工程师](./hardware-agency-agents-cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/CPLD%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `programmable-logic`, `io-level`, `timing-analysis` | 简单逻辑控制、接口转换、IO 电平与配置方式 |
+| [FPGA硬件工程师](./hardware-agency-agents-cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/FPGA%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `fpga-config`, `power-tree`, `high-speed-io` | FPGA 供电、时钟、配置接口、多电压域与高速 IO |
+| [SoC硬件平台工程师](./hardware-agency-agents-cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E5%BA%95%E5%B1%82%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E6%96%B9%E5%90%91/SoC%E7%A1%AC%E4%BB%B6%E5%B9%B3%E5%8F%B0%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `ddr-bringup`, `pmic-sequencing`, `boot-config` | SoC/MPU 平台、DDR、电源时序、PMIC 与启动配置 |
+| [芯片平台与板级协同评审工程师 (设计评审)](./hardware-design-review-validation/cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `design-review`, `ddr-bringup`, `pmic-sequencing`, `boot-config` | 面向 SoC、FPGA、DDR、PMIC、启动链路和参考设计落地的评审 |
 
+### 通信与接口方向（`communications`）— 1 个角色，1 个设计评审
 
-### 硬件设计评审与验证（16 份双语文档）
-
-#### 中文评审 Skill（8）
-
-| Skill | 定位 |
-| --- | --- |
-| [PCB与板级实现评审工程师](./hardware-design-review-validation/cn/PCB%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%AE%9E%E7%8E%B0%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向原理图、PCB、叠层、阻抗、制造资料和测试点的板级实现评审 |
-| [可靠性EMC安规评审工程师](./hardware-design-review-validation/cn/%E5%8F%AF%E9%9D%A0%E6%80%A7EMC%E5%AE%89%E8%A7%84%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向降额、温升、ESD、浪涌、EMC、安规距离和认证资料的风险评审 |
-| [嵌入式硬件评审工程师](./hardware-design-review-validation/cn/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%A1%AC%E4%BB%B6%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向 MCU/MPU 最小系统、复位时钟、启动配置、接口和调试入口的评审 |
-| [数字模拟混合信号评审工程师](./hardware-design-review-validation/cn/%E6%95%B0%E5%AD%97%E6%A8%A1%E6%8B%9F%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向高速数字、模拟链路、ADC/DAC、参考源、噪声和串扰的评审 |
-| [测试与验证评审工程师](./hardware-design-review-validation/cn/%E6%B5%8B%E8%AF%95%E4%B8%8E%E9%AA%8C%E8%AF%81%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向 EVT、DVT、PVT、测试覆盖、样本量、数据记录和问题闭环的评审 |
-| [电源与功率电子评审工程师](./hardware-design-review-validation/cn/%E7%94%B5%E6%BA%90%E4%B8%8E%E5%8A%9F%E7%8E%87%E7%94%B5%E5%AD%90%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向电源树、功率级、环路、纹波、瞬态、保护、热和 EMI 的评审 |
-| [芯片平台与板级协同评审工程师](./hardware-design-review-validation/cn/%E8%8A%AF%E7%89%87%E5%B9%B3%E5%8F%B0%E4%B8%8E%E6%9D%BF%E7%BA%A7%E5%8D%8F%E5%90%8C%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向 SoC、FPGA、DDR、PMIC、启动链路和参考设计落地的评审 |
-| [通信与接口评审工程师](./hardware-design-review-validation/cn/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | 面向以太网、USB、CAN、RS485、LVDS、连接器、线缆和接口保护的评审 |
-
-#### 英文 Review Skill（8）
-
-| Skill | 定位 |
-| --- | --- |
-| [PCB and Board-Level Design Review Engineer](./hardware-design-review-validation/en/PCB%20and%20Board-Level%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Board implementation review for schematics, PCB layout, stackup, impedance, manufacturing data, and test points |
-| [Reliability EMC and Safety Design Review Engineer](./hardware-design-review-validation/en/Reliability%20EMC%20and%20Safety%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Risk review for derating, temperature rise, ESD, surge, EMC, safety distances, and certification data |
-| [Embedded Hardware Design Review Engineer](./hardware-design-review-validation/en/Embedded%20Hardware%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for MCU/MPU minimum systems, reset and clock circuits, boot configuration, interfaces, and debug access |
-| [Digital Analog and Mixed-Signal Design Review Engineer](./hardware-design-review-validation/en/Digital%20Analog%20and%20Mixed-Signal%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for high-speed digital, analog chains, ADC/DAC, references, noise, and crosstalk |
-| [Testing and Validation Review Engineer](./hardware-design-review-validation/en/Testing%20and%20Validation%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for EVT, DVT, PVT, test coverage, sample size, data records, and issue closure |
-| [Power and Power Electronics Design Review Engineer](./hardware-design-review-validation/en/Power%20and%20Power%20Electronics%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for power trees, power stages, loops, ripple, transients, protection, thermal behavior, and EMI |
-| [Chip Platform and Board Co-Design Review Engineer](./hardware-design-review-validation/en/Chip%20Platform%20and%20Board%20Co-Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for SoC, FPGA, DDR, PMIC, boot chains, and reference-design adaptation |
-| [Communications and Interface Design Review Engineer](./hardware-design-review-validation/en/Communications%20and%20Interface%20Design%20Review%20Engineer.md) | 英文硬件设计 review skill：Review for Ethernet, USB, CAN, RS485, LVDS, connectors, cables, and interface protection |
+| Agent | 工具 | 摘要 |
+| --- | --- | --- |
+| [通信硬件工程师](./hardware-agency-agents-cn/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E6%96%B9%E5%90%91/%E9%80%9A%E4%BF%A1%E7%A1%AC%E4%BB%B6%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `ethernet-phy`, `usb-signal`, `can-rs485`, `transmission-line` | 通信板卡、高速接口、链路调试、传输线与 EMC 协同设计 |
+| [通信与接口评审工程师 (设计评审)](./hardware-design-review-validation/cn/%E9%80%9A%E4%BF%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E8%AF%84%E5%AE%A1%E5%B7%A5%E7%A8%8B%E5%B8%88.md) | `design-review`, `ethernet-phy`, `usb-signal`, `can-rs485` | 面向以太网、USB、CAN、RS485、LVDS、连接器、线缆和接口保护的评审 |
+<!-- catalog:generated:end -->
 
 ## 🎯 如何选择合适的 Skill
 
@@ -273,7 +268,8 @@ hardware-agency-agents/
 建议优先保证以下一致性：
 
 - skill 名称清晰且岗位边界明确
-- frontmatter 至少包含 `name` 与 `description`
+- frontmatter 必须包含 `id`、`name`、`description`、`summary`、`domain`、`kind`、`tools`，并满足 [`schema/agent.schema.json`](./schema/agent.schema.json)
+- 新增或重命名 agent 后运行 `python scripts/generate_catalog.py --write`
 - 内容强调约束、流程、交付物和适用场景，而不是泛化定义
 - 不提交公司内部资料、客户敏感信息或受版权限制的内容
 
@@ -281,17 +277,17 @@ hardware-agency-agents/
 
 仓库已配置 GitHub Actions，在 Pull Request 和手动触发时会检查：
 
-- skill 文档 frontmatter 是否完整
-- `name` 是否重复
-- `README.md` 与 `README.zh-CN.md` 中的本地 skill 链接是否都指向真实文件
+- frontmatter 是否符合 `schema/agent.schema.json`
+- `id` 与 `name` 是否唯一，以及中英文配对的 `domain`、`kind`、`tools` 是否一致
+- 生成的目录，以及 `README.md` 与 `README.zh-CN.md` 中的本地 skill 链接是否指向真实文件
+- `evals/` 里的评测桩（不调用模型）
 
-这些工作流只负责仓库质量校验，不会把 skill 自动安装到任何 agent 本地目录。
+这些工作流只做仓库质量校验，不会把 agent 安装到本地宿主目录。
 
 ## 🚀 后续可扩展方向
 
 如果你准备继续扩充这个仓库，建议优先补这些维度：
 
-- 为每个方向增加统一命名规范与标签体系
-- 增加跨 skill 的组合建议，例如“STM32 + EMC + 验证”
-- 保持中英文两套索引同步，方便跨语言检索
-- 为重复或重叠角色建立主次边界，降低调用歧义
+- 增加跨 skill 的组合示例，例如“STM32 + EMC + 验证”
+- 用 `evals/run_evals.py --response` 对真实模型回答做清单评分
+- 为重叠角色建立主次边界，降低调用歧义

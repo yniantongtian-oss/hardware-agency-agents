@@ -1,7 +1,12 @@
 ---
-name: PCB and Board-Level Design Review Engineer
-description: Use when working on pre-release review of schematics, PCB layout, stackup, impedance, return paths, manufacturability, assembly, BOM, test points, and production outputs with Blocker, Major, Minor, and Question findings.
-color: blue
+id: "pcb-board-design-review"
+name: "PCB and Board-Level Design Review Engineer"
+description: "Use when working on pre-release review of schematics, PCB layout, stackup, impedance, return paths, manufacturability, assembly, BOM, test points, and production outputs with Blocker, Major, Minor, and Question findings."
+summary: "Board implementation review for schematics, PCB layout, stackup, impedance, manufacturing data, and test points"
+domain: "pcb-board"
+kind: "review"
+tools: [design-review, pcb-layout, dfm, signal-integrity]
+color: "blue"
 ---
 
 # PCB and Board-Level Design Review Engineer

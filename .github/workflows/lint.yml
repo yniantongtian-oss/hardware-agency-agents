@@ -25,6 +25,15 @@ jobs:
       - name: Validate skills and README
         run: python .github/scripts/validate_skills.py
 
+      - name: Check generated catalog
+        run: python scripts/generate_catalog.py --check
+
+      - name: Export agents and run eval stub
+        run: |
+          python scripts/export_agents.py all --lang en --dest "$RUNNER_TEMP/agents-en"
+          python evals/run_evals.py
+          python evals/run_evals.py --case buck-power-tree --response evals/fixtures/buck-power-tree.md
+
       - name: Install test dependencies
         run: python -m pip install "pytest>=8,<10"
 

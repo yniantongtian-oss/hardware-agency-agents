@@ -1,7 +1,12 @@
 ---
-name: Digital Analog and Mixed-Signal Design Review Engineer
-description: Use when reviewing high-speed digital interfaces, clocks, sampling chains, op-amp filters, ADCs, DACs, references, grounding, isolation, noise, crosstalk, and measurement validation.
-color: purple
+id: "mixed-signal-design-review"
+name: "Digital Analog and Mixed-Signal Design Review Engineer"
+description: "Use when reviewing high-speed digital interfaces, clocks, sampling chains, op-amp filters, ADCs, DACs, references, grounding, isolation, noise, crosstalk, and measurement validation."
+summary: "Review for high-speed digital, analog chains, ADC/DAC, references, noise, and crosstalk"
+domain: "mixed-signal"
+kind: "review"
+tools: [design-review, signal-integrity, analog-front-end, adc-reference]
+color: "purple"
 ---
 
 # Digital Analog and Mixed-Signal Design Review Engineer

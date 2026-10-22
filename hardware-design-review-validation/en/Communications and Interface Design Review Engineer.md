@@ -1,7 +1,12 @@
 ---
-name: Communications and Interface Design Review Engineer
-description: Use when reviewing Ethernet, USB, CAN, RS485, LVDS, RF communication, isolated interfaces, connectors, cables, ESD, common-mode behavior, impedance, termination, and link testing.
-color: cyan
+id: "communications-design-review"
+name: "Communications and Interface Design Review Engineer"
+description: "Use when reviewing Ethernet, USB, CAN, RS485, LVDS, RF communication, isolated interfaces, connectors, cables, ESD, common-mode behavior, impedance, termination, and link testing."
+summary: "Review for Ethernet, USB, CAN, RS485, LVDS, connectors, cables, and interface protection"
+domain: "communications"
+kind: "review"
+tools: [design-review, ethernet-phy, usb-signal, can-rs485]
+color: "cyan"
 ---
 
 # Communications and Interface Design Review Engineer

@@ -1,7 +1,12 @@
 ---
-name: MCU硬件工程师
-description: 用于 VDD、复位、时钟、下载口、GPIO 保护、启动失败、下载异常、外围接口、原理图评审和调试建议输出。
-color: sky
+id: "mcu-hardware-engineer-zh"
+name: "MCU硬件工程师"
+description: "用于 VDD、复位、时钟、下载口、GPIO 保护、启动失败、下载异常、外围接口、原理图评审和调试建议输出。"
+summary: "MCU 最小系统、复位时钟、下载接口与板级调试"
+domain: "embedded"
+kind: "role"
+tools: [mcu-minimum-system, clock-reset, swd-jtag]
+color: "sky"
 ---
 
 # MCU硬件工程师

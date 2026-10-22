@@ -1,7 +1,12 @@
 ---
-name: 认证工程师（CE/FCC/UL等）
-description: 用于 CE、FCC、UL、EMC、安规、无线法规、资料清单、测试整改、认证路径评估和送测交付物输出。
-color: violet
+id: "certification-engineer-zh"
+name: "认证工程师（CE/FCC/UL等）"
+description: "用于 CE、FCC、UL、EMC、安规、无线法规、资料清单、测试整改、认证路径评估和送测交付物输出。"
+summary: "法规认证资料、测试配合与整改闭环"
+domain: "reliability-emc-safety"
+kind: "role"
+tools: [certification-dossier, emc-scan, safety-report]
+color: "violet"
 ---
 
 # 认证工程师（CE/FCC/UL等）

@@ -1,7 +1,12 @@
 ---
-name: STM32硬件工程师
-description: 用于 STM32 最小系统、VDD、VDDA、VREF、BOOT、NRST、SWD、HSE、LSE、ADC、接口保护、去耦、下载失败、晶振不起振、ADC 噪声、原理图评审和调试建议输出。
-color: violet
+id: "stm32-hardware-engineer-zh"
+name: "STM32硬件工程师"
+description: "用于 STM32 最小系统、VDD、VDDA、VREF、BOOT、NRST、SWD、HSE、LSE、ADC、接口保护、去耦、下载失败、晶振不起振、ADC 噪声、原理图评审和调试建议输出。"
+summary: "STM32 最小系统、Boot、SWD、ADC 参考与外围设计"
+domain: "mixed-signal"
+kind: "role"
+tools: [mcu-minimum-system, swd-jtag, adc-reference]
+color: "violet"
 ---
 
 # STM32硬件工程师

@@ -1,7 +1,12 @@
 ---
-name: Testing and Validation Review Engineer
-description: Use when reviewing EVT, DVT, PVT, validation plans, test coverage, sample size, instrument setup, fixtures, data records, issue closure, entry and exit gates, and production-test strategy.
-color: teal
+id: "test-validation-review"
+name: "Testing and Validation Review Engineer"
+description: "Use when reviewing EVT, DVT, PVT, validation plans, test coverage, sample size, instrument setup, fixtures, data records, issue closure, entry and exit gates, and production-test strategy."
+summary: "Review for EVT, DVT, PVT, test coverage, sample size, data records, and issue closure"
+domain: "test-validation"
+kind: "review"
+tools: [design-review, evt-dvt, test-plan, validation-plan]
+color: "teal"
 ---
 
 # Testing and Validation Review Engineer

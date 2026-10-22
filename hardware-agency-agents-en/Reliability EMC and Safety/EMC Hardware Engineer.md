@@ -1,7 +1,12 @@
 ---
-name: EMC Hardware Engineer
-description: Use when working on EMI, EMS, conducted emissions, radiated emissions, static electricity, surges, filtering, grounding, shielding, interface protection, board-level and system-level EMC risk analysis, remediation recommendations and verification plan output.
-color: indigo
+id: "emc-hardware-engineer"
+name: "EMC Hardware Engineer"
+description: "Use when working on EMI, EMS, conducted emissions, radiated emissions, static electricity, surges, filtering, grounding, shielding, interface protection, board-level and system-level EMC risk analysis, remediation recommendations and verification plan output."
+summary: "EMC design, diagnosis, and closure from board level to system level"
+domain: "reliability-emc-safety"
+kind: "role"
+tools: [emc-scan, spectrum-analyzer, esd-test]
+color: "indigo"
 ---
 
 # EMC Hardware Engineer
